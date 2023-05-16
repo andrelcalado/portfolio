@@ -22,6 +22,7 @@ export const ButtonComponent = styled(Link)`
   &:hover {
     background-color: ${theme.colors.green.light};
     color: ${theme.colors.blue.dark};
+    transform: scale(1.03);
 
     & svg {
         fill: ${theme.colors.blue.dark};

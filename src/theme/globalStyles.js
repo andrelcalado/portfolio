@@ -11,6 +11,11 @@ export const theme = {
     green: {
       white: '#97FFE1',
       light: '#3CFFD1',
+    },
+    gray: {
+      '200': '#CACBCF',
+      '300': '#4E525D',
+      '400': '#363636'
     }
   },
 };

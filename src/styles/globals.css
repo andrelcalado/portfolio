@@ -2,7 +2,7 @@
   box-sizing: border-box;
   padding: 0;
   margin: 0;
-  transition: 0.3s ease-out;
+  transition: 0.4s cubic-bezier(.47,1.64,.41,.8);
 }
 
 html,
@@ -34,5 +34,19 @@ li {
   100% {
     transform: translate(-50%, 15px);
     opacity: 0;
+  }  
+}
+
+@keyframes typing {
+  0% {
+    opacity: 1;
+  }
+  
+  50% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
   }  
 }

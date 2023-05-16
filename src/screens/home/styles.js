@@ -3,12 +3,18 @@ import { theme } from "../../theme/globalStyles";
 import Image from "next/image";
 import {
   displayMdBold,
+  displaySmBold,
   displaySmMedium,
   displayX1Bold,
   displayX2Bold,
+  displayXsBold,
   displayXsMedium,
   displayXsRegular,
   textLgMedium,
+  textLgRegular,
+  textMdRegular,
+  textSmRegular,
+  textX1Bold,
   textX1Medium,
 } from "@/theme/typography";
 
@@ -86,17 +92,16 @@ export const ScrollDrop = styled.div`
   left: 50%;
   transform: translate(-50%, 0);
   border-radius: 15px;
-  border: 1px solid ${theme.colors.white};
+  border: 1px solid ${theme.colors.green.light};
   position: absolute;
   bottom: 30px;
-  opacity: 0.7;
 
   &::after {
     content: "";
     width: 3px;
     height: 3px;
     border-radius: 100%;
-    background-color: ${theme.colors.white};
+    background-color: ${theme.colors.green.light};
     position: absolute;
     top: 4px;
     left: 52%;
@@ -126,7 +131,85 @@ export const SkillsSectionWrapper = styled.div`
   background-color: ${theme.colors.white};
   position: relative;
   z-index: 3;
+  padding: 50px 0;
+
+  & h2 {
+    ${displaySmBold}
+    background: -webkit-linear-gradient(0deg, ${theme.colors.green.light} -20%, ${theme.colors.blue.dark} 50%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-align: center;
+    margin: 0 auto 60px;
+    position: relative;
+    width: fit-content;
+
+    &::after {
+      content: '';
+      position: absolute;
+      height: 8px;
+      width: 8px;
+      background-color: ${theme.colors.blue.dark};
+      right: -20px;
+      bottom: 9px;
+      animation: typing 1.5s infinite ease-out;
+      transition: none;
+      border-radius: 1px;
+    }
+  }
 `;
 
 export const SkillsCardsContainer = styled.div`
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+`;
+
+export const SkillCard = styled.div`
+  width: 100%;
+  /* max-width: 300px; */
+  height: 80px;
+  padding: 20px;
+  background-color: ${theme.colors.white};
+  border-radius: 5px;
+  display: flex;
+  align-items: center;
+  box-shadow: 0px 0px 15px -1px rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+  gap: 20px;
+  opacity: 0.5;
+  transition: 0.4s cubic-bezier(.47,1.64,.41,.8);
+  filter: blur(.7px);
+
+  &:hover {
+    opacity: 1;
+    transform: scale(1.03);
+    filter: blur(0);
+  }
+`;
+
+export const SkillTexts = styled.div`
+  & p {
+    ${textSmRegular}
+    color: ${theme.colors.gray[200]};
+    line-height: 12px;
+  }
+
+  & h4 {
+    ${textX1Bold}
+    color: ${theme.colors.gray[400]};
+  }
+`;
+
+export const SkillLogo = styled.figure`
+  width: 50px;
+  height: 100%;
+
+  & svg,
+  & img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    position: relative !important;
+    fill: #62dafb;
+  }
 `;

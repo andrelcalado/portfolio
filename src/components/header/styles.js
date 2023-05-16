@@ -45,11 +45,10 @@ export const NavContainer = styled.nav`
       }
 
       &:hover {
-        font-size: 17px;
+        transform: scale(1.04);
         color: ${theme.colors.green.light};
 
         & svg {
-          width: 16px;
           fill: ${theme.colors.green.light};
         }
       }
