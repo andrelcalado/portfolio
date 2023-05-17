@@ -132,10 +132,12 @@ export const SkillsSectionWrapper = styled.div`
   position: relative;
   z-index: 3;
   padding: 50px 0;
+  height: 100vh;
 
   & h2 {
     ${displaySmBold}
-    background: -webkit-linear-gradient(0deg, ${theme.colors.green.light} -20%, ${theme.colors.blue.dark} 50%);
+    background: -webkit-linear-gradient(0deg, ${theme.colors.green
+      .light} -20%, ${theme.colors.blue.dark} 50%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     text-align: center;
@@ -144,7 +146,7 @@ export const SkillsSectionWrapper = styled.div`
     width: fit-content;
 
     &::after {
-      content: '';
+      content: "";
       position: absolute;
       height: 8px;
       width: 8px;
@@ -177,8 +179,8 @@ export const SkillCard = styled.div`
   cursor: pointer;
   gap: 20px;
   opacity: 0.5;
-  transition: 0.4s cubic-bezier(.47,1.64,.41,.8);
-  filter: blur(.7px);
+  transition: 0.4s cubic-bezier(0.47, 1.64, 0.41, 0.8);
+  filter: blur(0.7px);
 
   &:hover {
     opacity: 1;
@@ -211,5 +213,34 @@ export const SkillLogo = styled.figure`
     object-fit: contain;
     position: relative !important;
     fill: #62dafb;
+  }
+`;
+
+export const SkillsFooterContainer = styled.div`
+  margin: 100px auto 0;
+  width: fit-content;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+
+  &::before,
+  &::after {
+    content: "";
+    display: block;
+    width: 130px;
+    height: 1px;
+    background-color: ${theme.colors.blue.dark};
+    animation: widthLine 3.5s infinite cubic-bezier(.47,1.64,.41,.8) 2s;
+  }
+`;
+
+export const SkillsSymbolAnimated = styled.figure`
+  width: 30px;
+  height: 30px;
+  animation: symRotate 3.5s infinite cubic-bezier(.47,1.64,.41,.8);
+
+  & img {
+    object-fit: contain;
+    position: relative !important;
   }
 `;

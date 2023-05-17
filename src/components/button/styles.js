@@ -1,6 +1,6 @@
 import Link from "next/link";
 import { theme } from "@/theme/globalStyles";
-import { textSmRegular, textXsMedium, textXsRegular } from "@/theme/typography";
+import { textXsMedium } from "@/theme/typography";
 import styled from "styled-components";
 
 export const ButtonComponent = styled(Link)`
@@ -25,7 +25,7 @@ export const ButtonComponent = styled(Link)`
     transform: scale(1.03);
 
     & svg {
-        fill: ${theme.colors.blue.dark};
+      fill: ${theme.colors.blue.dark};
     }
   }
 `;

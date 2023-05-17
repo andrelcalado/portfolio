@@ -50,3 +50,45 @@ li {
     opacity: 1;
   }  
 }
+
+@keyframes symRotate {
+  0% {
+    transform: translate(0, 0);
+  }
+
+  50% {
+    transform: translate(0, -15px);
+  }  
+
+  100% {
+    transform: translate(0, 0);
+  }  
+}
+
+@keyframes typing {
+  0% {
+    opacity: 1;
+  }
+  
+  50% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }  
+}
+
+@keyframes widthLine {
+  0% {
+    width: 30px;
+  }
+  
+  50% {
+    width: 130px;
+  }
+
+  100% {
+    width: 30px;
+  }  
+}

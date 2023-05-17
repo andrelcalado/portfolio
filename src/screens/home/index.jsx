@@ -17,6 +17,8 @@ import {
   SkillLogo,
   SkillGradient,
   SkillTexts,
+  SkillsFooterContainer,
+  SkillsSymbolAnimated,
 } from "./styles";
 import ALButton from "@/components/button";
 import gsap from "gsap";
@@ -256,6 +258,12 @@ export default function HomeScreen() {
                 </SkillTexts>
               </SkillCard>
             </SkillsCardsContainer>
+
+            <SkillsFooterContainer>
+              <SkillsSymbolAnimated>
+                <Image fill src="/assets/icons/al-symbol.svg" alt="AL Symbol" />
+              </SkillsSymbolAnimated>
+            </SkillsFooterContainer>
           </Container>
         </SkillsSectionWrapper>
       </SkillsSection>
