@@ -1,5 +1,5 @@
 import { theme } from "@/theme/globalStyles";
-import styled from "styled-components";
+import styled, { css } from "styled-components";
 import { textMdRegular } from "@/theme/typography";
 
 export const HeaderContainer = styled.header`
@@ -7,10 +7,33 @@ export const HeaderContainer = styled.header`
   width: 100%;
   top: 0;
   z-index: 99999;
+  background: transparent;
+  transition: 0.4s ease-out;
+
+  ${({ scrolled }) =>
+    css`
+      &::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: ${scrolled ? "rgba(1,21,28, 0.9)" : "transparent"};
+        z-index: -1;
+        box-shadow: 0 4px 30px
+          ${scrolled ? "rgba(1,21,28, 0.9)" : "transparent"};
+        backdrop-filter: blur(${scrolled ? "5px" : "0"});
+        -webkit-backdrop-filter: blur(${scrolled ? "5px" : "0"});
+        transition: .5s ease-out;
+        pointer-events: none;
+      }
+    `}
 `;
 
 export const LogoContainer = styled.figure`
-  width: 60px;
+  width: ${({ scrolled }) => (scrolled ? "30px" : "60px")};
+  transition: .5s ease-out;
 
   & svg {
     width: 100%;
@@ -21,11 +44,16 @@ export const LogoContainer = styled.figure`
 export const HeaderWrapper = styled.div`
   display: flex;
   justify-content: space-between;
+  align-items: center;
   width: 100%;
-  padding: 40px 0;
+  padding: ${({ scrolled }) => (scrolled ? "20px 0 " : "30px 0")};
+  transition: .5s ease-out;
 `;
 
 export const NavContainer = styled.nav`
+  margin-top: ${({scrolled}) => scrolled ? '0' : '-50px' };
+  transition: .5s ease-out;
+
   & ul {
     display: flex;
     gap: 30px;
@@ -34,10 +62,13 @@ export const NavContainer = styled.nav`
     & li {
       ${textMdRegular}
       color: ${theme.colors.white};
-      display: flex;
-      gap: 5px;
       cursor: pointer;
-      align-items: center;
+
+      & a {
+        display: flex;
+        gap: 5px;
+        align-items: center;
+      }
 
       & svg {
         width: 15px;

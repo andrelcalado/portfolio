@@ -10,8 +10,8 @@ export const theme = {
     },
     green: {
       gray: '#c2d8d3',
-      white: '#97FFE1',
       light: '#3CFFD1',
+      shadow: '#1F8069',
     },
     gray: {
       '200': '#CACBCF',

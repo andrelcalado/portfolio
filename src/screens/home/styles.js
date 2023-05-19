@@ -157,6 +157,20 @@ export const SkillsSectionWrapper = styled.div`
       transition: none;
       border-radius: 1px;
     }
+
+    &::before {
+      content: "";
+      position: absolute;
+      bottom: -10px;
+      left: 50%;
+      transform: translate(-50%, 0);
+      width: 220px;
+      height: 2px;
+      background-color: ${theme.colors.blue.dark};
+      filter: blur(10px);
+      border-radius: 100%;
+      opacity: 0.7;
+    }
   }
 `;
 
@@ -230,17 +244,65 @@ export const SkillsFooterContainer = styled.div`
     width: 130px;
     height: 1px;
     background-color: ${theme.colors.blue.dark};
-    animation: widthLine 3.5s infinite cubic-bezier(.47,1.64,.41,.8) 2s;
+    animation: widthLine 3.5s infinite cubic-bezier(0.47, 1.64, 0.41, 0.8);
   }
 `;
 
 export const SkillsSymbolAnimated = styled.figure`
   width: 30px;
   height: 30px;
-  animation: symRotate 3.5s infinite cubic-bezier(.47,1.64,.41,.8);
+  animation: symRotate 3.5s infinite cubic-bezier(0.47, 1.64, 0.41, 0.8);
 
   & img {
     object-fit: contain;
     position: relative !important;
   }
 `;
+
+// Projects Section
+export const ProjectsSection = styled.section`
+  height: 100vh;
+  padding: 120px 0 70px;
+
+  & h2 {
+    ${displaySmBold}
+    background: -webkit-linear-gradient(0deg, ${theme.colors.green
+      .light} 30%, ${theme.colors.green.shadow} 90%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-align: center;
+    margin: 0 auto 60px;
+    position: relative;
+    width: fit-content;
+
+    &::after {
+      content: "";
+      position: absolute;
+      height: 8px;
+      width: 8px;
+      background-color: ${theme.colors.green.light};
+      right: -20px;
+      bottom: 9px;
+      animation: typing 1.5s infinite ease-out;
+      transition: none;
+      border-radius: 1px;
+    }
+
+    &::before {
+      content: "";
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 200px;
+      height: 5px;
+      background-color: ${theme.colors.green.light};
+      filter: blur(15px);
+      border-radius: 100%;
+      opacity: 0.5;
+    }
+  }
+`;
+
+export const ProjectsSlideContainer = styled.div`
+`
