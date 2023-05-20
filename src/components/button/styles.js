@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { theme } from "@/theme/globalStyles";
+import { theme } from "../../theme/globalStyles";
 import { textXsMedium } from "@/theme/typography";
 import styled from "styled-components";
 

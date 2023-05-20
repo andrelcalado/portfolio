@@ -4,18 +4,10 @@ import Image from "next/image";
 import {
   displayMdBold,
   displaySmBold,
-  displaySmMedium,
   displayX1Bold,
-  displayX2Bold,
-  displayXsBold,
-  displayXsMedium,
   displayXsRegular,
-  textLgMedium,
-  textLgRegular,
-  textMdRegular,
   textSmRegular,
   textX1Bold,
-  textX1Medium,
 } from "@/theme/typography";
 
 export const Main = styled.main`
@@ -106,7 +98,7 @@ export const ScrollDrop = styled.div`
     top: 4px;
     left: 52%;
     transform: translate(-50%, 0);
-    animation: scrollDown 1.5s infinite ease-in-out;
+    animation: scrollDown 2.5s infinite ease-in-out;
   }
 `;
 
@@ -304,5 +296,4 @@ export const ProjectsSection = styled.section`
   }
 `;
 
-export const ProjectsSlideContainer = styled.div`
-`
+export const ProjectsSlideContainer = styled.div``;

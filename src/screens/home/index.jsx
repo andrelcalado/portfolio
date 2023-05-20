@@ -15,7 +15,6 @@ import {
   SkillsCardsContainer,
   SkillCard,
   SkillLogo,
-  SkillGradient,
   SkillTexts,
   SkillsFooterContainer,
   SkillsSymbolAnimated,
@@ -23,8 +22,10 @@ import {
   ProjectsSlideContainer,
 } from "./styles";
 import ALButton from "@/components/button";
+import ProjectsSlide from "@/components/projectsSwiper";
 import gsap from "gsap";
 import Image from "next/image";
+import 'swiper/css';
 
 export default function HomeScreen() {
   let stacksMovimentRef = useRef();
@@ -32,13 +33,13 @@ export default function HomeScreen() {
   useEffect(() => {
     gsap.to(stacksMovimentRef, {
       keyframes: [
-        { y: 0, delay: 1, ease: "back.out(1)" },
-        { y: -70, delay: 2, ease: "back.out(1)" },
-        { y: -130, delay: 3, ease: "back.out(1)" },
-        { y: -190, delay: 4, ease: "back.out(1)" },
+        { y: 0, delay: 2, ease: "back.out(2)" },
+        { y: -70, delay: 2, ease: "back.out(2)" },
+        { y: -130, delay: 2, ease: "back.out(2)" },
+        { y: -190, delay: 2, ease: "back.out(2)" },
       ],
       repeat: -1,
-      repeatDelay: 3,
+      repeatDelay: 2,
       yoyo: true,
     });
   }, []);
@@ -259,13 +260,11 @@ export default function HomeScreen() {
       </SkillsSection>
 
       <ProjectsSection id="projects" data-js="section">
-        <Container>
           <h2>Projects</h2>
 
           <ProjectsSlideContainer>
-
+            <ProjectsSlide />
           </ProjectsSlideContainer>
-        </Container>
       </ProjectsSection>
     </Main>
   );

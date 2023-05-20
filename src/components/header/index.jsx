@@ -51,7 +51,13 @@ export default function Header() {
           <NavContainer scrolled={scrolled}>
             <ul>
               <li>
-                <Link href="skills" onClick={(e) => { e.preventDefault(); goToSection('skills')}}>
+                <Link
+                  href="skills"
+                  onClick={(e) => {
+                    e.preventDefault();
+                    goToSection("skills");
+                  }}
+                >
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
                     fill="#fafafa"
@@ -63,7 +69,13 @@ export default function Header() {
                 </Link>
               </li>
               <li>
-                <Link href="projects">
+                <Link
+                  href="projects"
+                  onClick={(e) => {
+                    e.preventDefault();
+                    goToSection("projects");
+                  }}
+                >
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
                     fill="#fafafa"
