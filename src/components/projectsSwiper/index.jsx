@@ -1,11 +1,14 @@
 import React from "react";
 import { ProjectsSwiper } from "./styles";
-import ProjectSlideComponent from "../projectSlide/index";
-import { ProjectSlide } from "../projectSlide/styles";
+import { ProjectSlide, ProjectTag } from "../projectSlide/styles";
 import { ProjectFigure } from "../projectSlide/styles";
 import { ProjectInfos } from "../projectSlide/styles";
 import { ProjectCTAContainer } from "../projectSlide/styles";
 import { ProjectCTA } from "../projectSlide/styles";
+import { Navigation, Pagination, Autoplay } from "swiper";
+import "swiper/css";
+import "swiper/css/navigation";
+import "swiper/css/pagination";
 import Image from "next/image";
 
 export default function ProjectsSlide() {
@@ -14,9 +17,17 @@ export default function ProjectsSlide() {
       slidesPerView={3}
       spaceBetween={20}
       onSlideChange={() => console.log("slide change")}
+      modules={[Navigation, Pagination, Autoplay]}
+      navigation
+      pagination={{ clickable: true }}
+      autoplay={{ delay: 5000 }}
       loop
     >
       <ProjectSlide>
+        <ProjectTag className="projectTag">
+          <Image fill src="/assets/icons/teamwork.svg" alt="Project Tag" />
+        </ProjectTag>
+
         <ProjectFigure
           className="projectFigure"
           fill
@@ -26,7 +37,7 @@ export default function ProjectsSlide() {
 
         <ProjectInfos className="projectInfos">
           <ProjectCTAContainer className="projectCTAContainer">
-            <ProjectCTA href="https://exit.ag/">
+            <ProjectCTA target="_blank" href="https://exit.ag/">
               <Image fill src="/assets/icons/browser.svg" alt="Browser Icon" />
             </ProjectCTA>
           </ProjectCTAContainer>
@@ -36,82 +47,10 @@ export default function ProjectsSlide() {
       </ProjectSlide>
 
       <ProjectSlide>
-        <ProjectFigure
-          className="projectFigure"
-          fill
-          src="/assets/images/projects/nstech.png"
-          alt="Nstech - Redesign"
-        />
+        <ProjectTag className="projectTag">
+          <Image fill src="/assets/icons/alone.svg" alt="Project Tag" />
+        </ProjectTag>
 
-        <ProjectInfos className="projectInfos">
-          <ProjectCTAContainer className="projectCTAContainer">
-            <ProjectCTA href="https://nstech.com.br">
-              <Image fill src="/assets/icons/browser.svg" alt="Browser Icon" />
-            </ProjectCTA>
-          </ProjectCTAContainer>
-
-          <h4>Nstech - Redesign</h4>
-        </ProjectInfos>
-      </ProjectSlide>
-
-      <ProjectSlide>
-        <ProjectFigure
-          className="projectFigure"
-          fill
-          src="/assets/images/projects/weld-vision.png"
-          alt="Weld Vision - Creation"
-        />
-
-        <ProjectInfos className="projectInfos">
-          <ProjectCTAContainer className="projectCTAContainer">
-            <ProjectCTA href="https://www.weldvision.com/">
-              <Image fill src="/assets/icons/browser.svg" alt="Browser Icon" />
-            </ProjectCTA>
-          </ProjectCTAContainer>
-
-          <h4>Weld Vision - Creation</h4>
-        </ProjectInfos>
-      </ProjectSlide>
-
-      <ProjectSlide>
-        <ProjectFigure
-          className="projectFigure"
-          fill
-          src="/assets/images/projects/techfx.png"
-          alt="Techfx - Creation"
-        />
-
-        <ProjectInfos className="projectInfos">
-          <ProjectCTAContainer className="projectCTAContainer">
-            <ProjectCTA href="https://techfx.com.br/">
-              <Image fill src="/assets/icons/browser.svg" alt="Browser Icon" />
-            </ProjectCTA>
-          </ProjectCTAContainer>
-
-          <h4>Techfx - Creation</h4>
-        </ProjectInfos>
-      </ProjectSlide>
-
-      <ProjectSlide>
-        <ProjectFigure
-          className="projectFigure"
-          fill
-          src="/assets/images/projects/nstech.png"
-          alt="Nstech - Redesign"
-        />
-
-        <ProjectInfos className="projectInfos">
-          <ProjectCTAContainer className="projectCTAContainer">
-            <ProjectCTA href="https://nstech.com.br">
-              <Image fill src="/assets/icons/browser.svg" alt="Browser Icon" />
-            </ProjectCTA>
-          </ProjectCTAContainer>
-
-          <h4>Nstech - Redesign</h4>
-        </ProjectInfos>
-      </ProjectSlide>
-
-      <ProjectSlide>
         <ProjectFigure
           className="projectFigure"
           fill
@@ -121,8 +60,8 @@ export default function ProjectsSlide() {
 
         <ProjectInfos className="projectInfos">
           <ProjectCTAContainer className="projectCTAContainer">
-            <ProjectCTA href="#">
-              <Image fill src="/assets/icons/browser.svg" alt="Browser Icon" />
+            <ProjectCTA target="_blank" href="#">
+              <Image fill src="/assets/icons/youtube.svg" alt="youtube Icon" />
             </ProjectCTA>
           </ProjectCTAContainer>
 
@@ -131,6 +70,102 @@ export default function ProjectsSlide() {
       </ProjectSlide>
 
       <ProjectSlide>
+        <ProjectTag className="projectTag">
+          <Image fill src="/assets/icons/teamwork.svg" alt="Project Tag" />
+        </ProjectTag>
+
+        <ProjectFigure
+          className="projectFigure"
+          fill
+          src="/assets/images/projects/nstech.png"
+          alt="Nstech - Redesign"
+        />
+
+        <ProjectInfos className="projectInfos">
+          <ProjectCTAContainer className="projectCTAContainer">
+            <ProjectCTA target="_blank" href="https://nstech.com.br">
+              <Image fill src="/assets/icons/browser.svg" alt="Browser Icon" />
+            </ProjectCTA>
+          </ProjectCTAContainer>
+
+          <h4>Nstech - Redesign</h4>
+        </ProjectInfos>
+      </ProjectSlide>
+
+      <ProjectSlide>
+        <ProjectTag className="projectTag">
+          <Image fill src="/assets/icons/teamwork.svg" alt="Project Tag" />
+        </ProjectTag>
+
+        <ProjectFigure
+          className="projectFigure"
+          fill
+          src="/assets/images/projects/weld-vision.png"
+          alt="Weld Vision - Creation"
+        />
+
+        <ProjectInfos className="projectInfos">
+          <ProjectCTAContainer className="projectCTAContainer">
+            <ProjectCTA target="_blank" href="https://www.weldvision.com/">
+              <Image fill src="/assets/icons/browser.svg" alt="Browser Icon" />
+            </ProjectCTA>
+          </ProjectCTAContainer>
+
+          <h4>Weld Vision - Creation</h4>
+        </ProjectInfos>
+      </ProjectSlide>
+
+      <ProjectSlide>
+        <ProjectTag className="projectTag">
+          <Image fill src="/assets/icons/teamwork.svg" alt="Project Tag" />
+        </ProjectTag>
+
+        <ProjectFigure
+          className="projectFigure"
+          fill
+          src="/assets/images/projects/techfx.png"
+          alt="Techfx - Creation"
+        />
+
+        <ProjectInfos className="projectInfos">
+          <ProjectCTAContainer className="projectCTAContainer">
+            <ProjectCTA target="_blank" href="https://techfx.com.br/">
+              <Image fill src="/assets/icons/browser.svg" alt="Browser Icon" />
+            </ProjectCTA>
+          </ProjectCTAContainer>
+
+          <h4>Techfx - Creation</h4>
+        </ProjectInfos>
+      </ProjectSlide>
+
+      <ProjectSlide>
+        <ProjectTag className="projectTag">
+          <Image fill src="/assets/icons/teamwork.svg" alt="Project Tag" />
+        </ProjectTag>
+
+        <ProjectFigure
+          className="projectFigure"
+          fill
+          src="/assets/images/projects/nstech.png"
+          alt="Nstech - Redesign"
+        />
+
+        <ProjectInfos className="projectInfos">
+          <ProjectCTAContainer className="projectCTAContainer">
+            <ProjectCTA target="_blank" href="https://nstech.com.br">
+              <Image fill src="/assets/icons/browser.svg" alt="Browser Icon" />
+            </ProjectCTA>
+          </ProjectCTAContainer>
+
+          <h4>Nstech - Redesign</h4>
+        </ProjectInfos>
+      </ProjectSlide>
+
+      <ProjectSlide>
+        <ProjectTag className="projectTag">
+          <Image fill src="/assets/icons/teamwork.svg" alt="Project Tag" />
+        </ProjectTag>
+
         <ProjectFigure
           className="projectFigure"
           fill
@@ -140,8 +175,8 @@ export default function ProjectsSlide() {
 
         <ProjectInfos className="projectInfos">
           <ProjectCTAContainer className="projectCTAContainer">
-            <ProjectCTA href="#">
-              <Image fill src="/assets/icons/browser.svg" alt="Browser Icon" />
+            <ProjectCTA target="_blank" href="#">
+              <Image fill src="/assets/icons/youtube.svg" alt="youtube Icon" />
             </ProjectCTA>
           </ProjectCTAContainer>
 
@@ -150,6 +185,10 @@ export default function ProjectsSlide() {
       </ProjectSlide>
 
       <ProjectSlide>
+        <ProjectTag className="projectTag">
+          <Image fill src="/assets/icons/teamwork.svg" alt="Project Tag" />
+        </ProjectTag>
+
         <ProjectFigure
           className="projectFigure"
           fill
@@ -159,7 +198,7 @@ export default function ProjectsSlide() {
 
         <ProjectInfos className="projectInfos">
           <ProjectCTAContainer className="projectCTAContainer">
-            <ProjectCTA href="http://voll.peakstudio.com.br/">
+            <ProjectCTA target="_blank" href="http://voll.peakstudio.com.br/">
               <Image fill src="/assets/icons/browser.svg" alt="Browser Icon" />
             </ProjectCTA>
           </ProjectCTAContainer>
@@ -169,6 +208,10 @@ export default function ProjectsSlide() {
       </ProjectSlide>
 
       <ProjectSlide>
+        <ProjectTag className="projectTag">
+          <Image fill src="/assets/icons/teamwork.svg" alt="Project Tag" />
+        </ProjectTag>
+
         <ProjectFigure
           className="projectFigure"
           fill
@@ -178,7 +221,7 @@ export default function ProjectsSlide() {
 
         <ProjectInfos className="projectInfos">
           <ProjectCTAContainer className="projectCTAContainer">
-            <ProjectCTA href="https://www.sommaior.com.br/">
+            <ProjectCTA target="_blank" href="https://www.sommaior.com.br/">
               <Image fill src="/assets/icons/browser.svg" alt="Browser Icon" />
             </ProjectCTA>
           </ProjectCTAContainer>
@@ -188,6 +231,10 @@ export default function ProjectsSlide() {
       </ProjectSlide>
 
       <ProjectSlide>
+        <ProjectTag className="projectTag">
+          <Image fill src="/assets/icons/teamwork.svg" alt="Project Tag" />
+        </ProjectTag>
+
         <ProjectFigure
           className="projectFigure"
           fill
@@ -197,7 +244,7 @@ export default function ProjectsSlide() {
 
         <ProjectInfos className="projectInfos">
           <ProjectCTAContainer className="projectCTAContainer">
-            <ProjectCTA href="https://www.tmg.agr.br/">
+            <ProjectCTA target="_blank" href="https://www.tmg.agr.br/">
               <Image fill src="/assets/icons/browser.svg" alt="Browser Icon" />
             </ProjectCTA>
           </ProjectCTAContainer>

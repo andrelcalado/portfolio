@@ -20,12 +20,14 @@ import {
   SkillsSymbolAnimated,
   ProjectsSection,
   ProjectsSlideContainer,
+  ProjectsPlaceholderContainer,
 } from "./styles";
+import ProjectPlaceholder from "@/components/projectPlaceholder";
 import ALButton from "@/components/button";
 import ProjectsSlide from "@/components/projectsSwiper";
 import gsap from "gsap";
 import Image from "next/image";
-import 'swiper/css';
+import "swiper/css";
 
 export default function HomeScreen() {
   let stacksMovimentRef = useRef();
@@ -260,11 +262,26 @@ export default function HomeScreen() {
       </SkillsSection>
 
       <ProjectsSection id="projects" data-js="section">
-          <h2>Projects</h2>
+        <h2>Projects</h2>
+        <p>
+          Some of the bests projects that i developed alone as front end
+          developer and projects that i developed with the top develop teams.
+        </p>
 
-          <ProjectsSlideContainer>
-            <ProjectsSlide />
-          </ProjectsSlideContainer>
+        <ProjectsSlideContainer>
+          <ProjectsSlide />
+        </ProjectsSlideContainer>
+
+        <ProjectsPlaceholderContainer>
+          <ProjectPlaceholder
+            type="alone"
+            desc="Project developed with only me as Front End Developer"
+          />
+          <ProjectPlaceholder
+            type="teamwork"
+            desc="Project developed with a Front End Team"
+          />
+        </ProjectsPlaceholderContainer>
       </ProjectsSection>
     </Main>
   );

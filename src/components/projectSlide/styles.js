@@ -2,9 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { SwiperSlide } from "swiper/react";
 import { theme } from "@/theme/globalStyles";
-import {
-  textMdBold,
-} from "@/theme/typography";
+import { textMdBold } from "@/theme/typography";
 import styled from "styled-components";
 
 export const ProjectSlide = styled(SwiperSlide)`
@@ -31,6 +29,12 @@ export const ProjectSlide = styled(SwiperSlide)`
       transform: translate(0, 0);
       pointer-events: all;
     }
+
+    & .projectTag {
+      pointer-events: all;
+      opacity: 1;
+      top: 0;
+    }
   }
 `;
 
@@ -38,6 +42,7 @@ export const ProjectFigure = styled(Image)`
   width: 100%;
   height: 100%;
   object-fit: cover;
+  position: relative !important;
 `;
 
 export const ProjectInfos = styled.div`
@@ -80,5 +85,25 @@ export const ProjectCTA = styled(Link)`
 
   & img {
     position: relative !important;
+  }
+`;
+
+export const ProjectTag = styled.div`
+  top: -50px;
+  left: 0;
+  width: 35px;
+  height: 45px;
+  position: absolute;
+  background: ${theme.colors.green.light};
+  z-index: 20;
+  padding: 5px;
+  border-radius: 0 0 10px 0;
+  box-shadow: 0 0 15px ${theme.colors.blue.dark};
+  pointer-events: none;
+  opacity: 0;
+
+   & img {
+    position: relative !important;
+    filter: invert(1);
   }
 `;

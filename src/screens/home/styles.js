@@ -255,6 +255,23 @@ export const SkillsSymbolAnimated = styled.figure`
 export const ProjectsSection = styled.section`
   height: 100vh;
   padding: 120px 0 70px;
+  overflow: hidden;
+  position: relative;
+
+  &::after {
+    content: "";
+    width: 400px;
+    height: 400px;
+    top: -25%;
+    right: 50%;
+    background: radial-gradient(
+      circle,
+      rgba(60, 255, 209, 0.5) 0%,
+      ${theme.colors.blue.darkLight} 54%
+    );
+    position: absolute;
+    filter: blur(150px);
+  }
 
   & h2 {
     ${displaySmBold}
@@ -263,9 +280,10 @@ export const ProjectsSection = styled.section`
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     text-align: center;
-    margin: 0 auto 60px;
+    margin: 0 auto 20px;
     position: relative;
     width: fit-content;
+    z-index: 5;
 
     &::after {
       content: "";
@@ -294,6 +312,25 @@ export const ProjectsSection = styled.section`
       opacity: 0.5;
     }
   }
+
+  & p {
+    ${textSmRegular}
+    text-align: center;
+    max-width: 500px;
+    margin: 0 auto 60px;
+    color: ${theme.colors.white};
+    position: relative;
+    z-index: 5;
+  }
 `;
 
-export const ProjectsSlideContainer = styled.div``;
+export const ProjectsSlideContainer = styled.div`
+  display: flex;
+`;
+
+export const ProjectsPlaceholderContainer = styled.div`
+  display: flex;
+  gap: 30px;
+  justify-content: center;
+  margin-top: 80px;
+`;
