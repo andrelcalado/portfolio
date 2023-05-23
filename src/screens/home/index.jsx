@@ -21,18 +21,57 @@ import {
   ProjectsSection,
   ProjectsSlideContainer,
   ProjectsPlaceholderContainer,
+  TimeLineSection,
+  TimeLineNav,
+  TimeLineTrack,
+  TimeLineMarker,
+  TimeLineList,
 } from "./styles";
 import ProjectPlaceholder from "@/components/projectPlaceholder";
 import ALButton from "@/components/button";
 import ProjectsSlide from "@/components/projectsSwiper";
 import gsap from "gsap";
 import Image from "next/image";
+import ScrollTrigger from "gsap/ScrollTrigger";
+import Draggable from "gsap/Draggable";
 import "swiper/css";
 
 export default function HomeScreen() {
   let stacksMovimentRef = useRef();
+  let trackRef = useRef();
 
   useEffect(() => {
+    gsap.registerPlugin(ScrollTrigger, Draggable);
+    const navLinks = gsap.utils.toArray("[data-link]");
+    const lastItemWidth = () => navLinks[navLinks.length - 1].offsetWidth;
+    const tl = gsap.timeline().to(trackRef, {
+      x: () => {
+        return (trackRef.offsetWidth * 0.5 - lastItemWidth()) * -1;
+      },
+      ease: "none", // important!
+    });
+    const st = ScrollTrigger.create({
+      animation: tl,
+      scrub: 0,
+    });
+    const getDraggableWidth = () => {
+      return trackRef.offsetWidth * 0.5 - lastItemWidth();
+    };
+    const draggableInstance = Draggable.create(trackRef, {
+      type: "x",
+      inertia: true,
+      bounds: {
+        minX: 0,
+        maxX: getDraggableWidth() * -1,
+      },
+      edgeResistance: 1, // Don’t allow any dragging beyond the bounds
+      onDragStart: () => st.disable(),
+      onDragEnd: () => st.enable(),
+    });
+    const getUseableHeight = () => document.documentElement.offsetHeight - window.innerHeight;
+
+    console.log("aq", navLinks);
+
     gsap.to(stacksMovimentRef, {
       keyframes: [
         { y: 0, delay: 2, ease: "back.out(2)" },
@@ -283,6 +322,45 @@ export default function HomeScreen() {
           />
         </ProjectsPlaceholderContainer>
       </ProjectsSection>
+
+      <TimeLineSection id="timeline" data-js="section">
+        <TimeLineMarker />
+
+        <TimeLineTrack ref={(el) => (trackRef = el)}>
+          <TimeLineList>
+            <li>
+              <a href="#section_1" data-link>
+                <span>1993</span>
+              </a>
+            </li>
+            <li>
+              <a href="#section_2" data-link>
+                <span>1995</span>
+              </a>
+            </li>
+            <li>
+              <a href="#section_3" data-link>
+                <span>1997</span>
+              </a>
+            </li>
+            <li>
+              <a href="#section_1" data-link>
+                <span>1993</span>
+              </a>
+            </li>
+            <li>
+              <a href="#section_2" data-link>
+                <span>1995</span>
+              </a>
+            </li>
+            <li>
+              <a href="#section_3" data-link>
+                <span>1997</span>
+              </a>
+            </li>
+          </TimeLineList>
+        </TimeLineTrack>
+      </TimeLineSection>
     </Main>
   );
 }

@@ -334,3 +334,43 @@ export const ProjectsPlaceholderContainer = styled.div`
   justify-content: center;
   margin-top: 80px;
 `;
+
+export const TimeLineMarker = styled.div`
+  position: absolute;
+  top: 1.75rem;
+  left: 4rem;
+  width: 1rem;
+  height: 1rem;
+  transform: translate3d(-50%, 0, 0);
+  background: blue;
+  border-radius: 100%;
+  z-index: 2000;
+`;
+
+export const TimeLineSection = styled.section`
+  width: 100%;
+  height: 100vh;
+`;
+
+export const TimeLineTrack = styled.div`
+  position: relative;
+  min-width: max(200rem, 200%);
+  padding: 1.5rem max(100rem, 100%) 0 0;
+  height: 6rem;
+`;
+
+export const TimeLineList = styled.ul`
+  display: flex;
+  justify-content: space-between;
+
+  & li {
+    user-select: none;
+
+    & a {
+      position: relative;
+      display: block;
+      min-width: 8rem;
+      text-align: center;
+    }
+  }
+`;

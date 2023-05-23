@@ -88,7 +88,11 @@ export default function Header() {
                 </Link>
               </li>
               <li>
-                <Link href="#skills">
+                <Link href="timeline"
+                  onClick={(e) => {
+                    e.preventDefault();
+                    goToSection("timeline");
+                  }}>
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
                     fill="#fafafa"
