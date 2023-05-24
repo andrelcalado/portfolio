@@ -9,6 +9,10 @@ import {
   textSmRegular,
   textX1Bold,
 } from "@/theme/typography";
+import {
+  VerticalTimeline,
+  VerticalTimelineElement,
+} from "react-vertical-timeline-component";
 
 export const Main = styled.main`
   color: ${theme.colors.white};
@@ -332,45 +336,120 @@ export const ProjectsPlaceholderContainer = styled.div`
   display: flex;
   gap: 30px;
   justify-content: center;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.05);
   margin-top: 80px;
 `;
 
-export const TimeLineMarker = styled.div`
-  position: absolute;
-  top: 1.75rem;
-  left: 4rem;
-  width: 1rem;
-  height: 1rem;
-  transform: translate3d(-50%, 0, 0);
-  background: blue;
-  border-radius: 100%;
-  z-index: 2000;
-`;
-
+// Timeline section
 export const TimeLineSection = styled.section`
   width: 100%;
-  height: 100vh;
-`;
-
-export const TimeLineTrack = styled.div`
+  padding: 120px 0 70px;
   position: relative;
-  min-width: max(200rem, 200%);
-  padding: 1.5rem max(100rem, 100%) 0 0;
-  height: 6rem;
+
+  &::before {
+    content: "";
+    width: 400px;
+    height: 400px;
+    top: -100px;
+    left: 150px;
+    background: radial-gradient(
+      circle,
+      rgba(60, 255, 209, 0.5) 0%,
+      ${theme.colors.blue.darkLight} 54%
+    );
+    position: absolute;
+    filter: blur(150px);
+  }
+
+  & h2 {
+    ${displaySmBold}
+    background: -webkit-linear-gradient(0deg, ${theme.colors.green
+      .light} 30%, ${theme.colors.green.shadow} 90%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-align: center;
+    margin: 0 auto 50px;
+    position: relative;
+    width: fit-content;
+    z-index: 5;
+
+    &::after {
+      content: "";
+      position: absolute;
+      height: 8px;
+      width: 8px;
+      background-color: ${theme.colors.green.light};
+      right: -20px;
+      bottom: 9px;
+      animation: typing 1.5s infinite ease-out;
+      transition: none;
+      border-radius: 1px;
+    }
+
+    &::before {
+      content: "";
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 200px;
+      height: 5px;
+      background-color: ${theme.colors.green.light};
+      filter: blur(15px);
+      border-radius: 100%;
+      opacity: 0.5;
+    }
+  }
 `;
 
-export const TimeLineList = styled.ul`
-  display: flex;
-  justify-content: space-between;
+export const TimelineComponent = styled(VerticalTimeline)`
+  z-index: 5;
 
-  & li {
-    user-select: none;
+  &::before {
+    width: 2px;
+    background: linear-gradient(
+      180deg,
+      rgba(1, 21, 28, 1) 0%,
+      rgba(60, 255, 209, 1) 100%
+    );
+  }
+`;
 
-    & a {
-      position: relative;
-      display: block;
-      min-width: 8rem;
-      text-align: center;
+export const TimelineItem = styled(VerticalTimelineElement)`
+  margin-bottom: 150px;
+
+  h3 {
+    text-align: right;
+  }
+
+  & .vertical-timeline-element-content {
+    background: transparent;
+    box-shadow: none;
+  }
+
+  & .vertical-timeline-element-content-arrow {
+    top: 30px;
+    height: 13px;
+    width: 13px;
+    border: 0 solid transparent;
+    border-right: 2px solid ${theme.colors.green.light};
+    border-top: 2px solid ${theme.colors.green.light};
+    transform: rotate(45deg);
+  }
+
+  &:nth-of-type(2n) {
+    & h3 {
+      text-align: left;
     }
+
+    & .vertical-timeline-element-content-arrow {
+      top: 29px !important;
+      transform: rotate(-135deg) !important;
+    }
+  }
+
+  & .vertical-timeline-element-icon {
+    box-shadow: 0 0 20px 13px #1315157d;
+    border: 10px solid rgba(255, 255, 255, 0.3);
   }
 `;
