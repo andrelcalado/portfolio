@@ -450,6 +450,9 @@ export const TimelineItem = styled(VerticalTimelineElement)`
 
   & .vertical-timeline-element-icon {
     box-shadow: 0 0 20px 13px #1315157d;
-    border: 10px solid rgba(255, 255, 255, 0.3);
+    width: 70px;
+    height: 70px;
+    overflow: hidden;
+    margin-left: -36px;
   }
 `;

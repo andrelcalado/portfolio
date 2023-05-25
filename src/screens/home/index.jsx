@@ -25,10 +25,6 @@ import {
   TimelineComponent,
   TimelineItem,
 } from "./styles";
-import {
-  VerticalTimeline,
-  VerticalTimelineElement,
-} from "react-vertical-timeline-component";
 import { timelineProjects } from "@/components/timelineProjects";
 import "react-vertical-timeline-component/style.min.css"
 import ProjectPlaceholder from "@/components/projectPlaceholder";
@@ -300,10 +296,11 @@ export default function HomeScreen() {
         <h2>Timeline</h2>
 
         <TimelineComponent>
-          {timelineProjects.map((item, i) => (
+          {timelineProjects.reverse().map((item, i) => (
             <TimelineItem
               key={i}
               date={item.period}
+              icon={<Image fill src={`/assets/images/timeline/${item.logo}.jpg`} alt={item.business + ' Logo'} />}
             >
               <h3 className="vertical-timeline-element-title">{item.title}</h3>
             </TimelineItem>
