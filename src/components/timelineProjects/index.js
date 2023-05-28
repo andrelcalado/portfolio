@@ -4,7 +4,7 @@ export const timelineProjects = [
     business: "Universidade Federal do Ceará",
     logo: "ufc",
     period: "Mar 2017 - Dec 2020",
-    desc: "",
+    desc: "The degree include several areas about Design like Industrial Design and Graphic Design, but your mainly focus is in the UX Design and Software Development.",
   },
   {
     title: "Vídeo Maker, Designer & Motion Designer",

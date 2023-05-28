@@ -348,10 +348,24 @@ export const ProjectsPlaceholderContainer = styled.div`
 // Timeline section
 export const TimeLineSection = styled.section`
   width: 100%;
+  margin-top: 60px;
   padding: 120px 0 70px;
   position: relative;
 
   &::before {
+    content: "";
+    top: 0;
+    left: 50%;
+    background-color: transparent;
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    border: 3px solid ${theme.colors.green.light};
+    transform: translate(-50%, 0) rotate(45deg);
+    animation: transformSymbol 15s cubic-bezier(0.47, 1.64, 0.41, 0.8) infinite;
+  }
+
+  &::after {
     content: "";
     width: 400px;
     height: 400px;

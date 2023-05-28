@@ -1,5 +1,5 @@
 import { theme } from "@/theme/globalStyles";
-import { textSmRegular, textXsRegular, textXsSemiBold } from "@/theme/typography";
+import { textXsSemiBold } from "@/theme/typography";
 import styled from "styled-components";
 
 export const ProjectPlaceholderCard = styled.div`
@@ -28,7 +28,7 @@ export const ProjectPlaceholderCard = styled.div`
     ${textXsSemiBold}
     text-align: left;
     color: ${theme.colors.blue.dark};
-    margin: 0;
+    margin: 0 !important;
     z-index: 1;
   }
 `;

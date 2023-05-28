@@ -27,6 +27,7 @@ import {
   TimelineItem,
   ALCodeBorderSymbol,
 } from "./styles";
+import BackToTop from "@/components/backToTop";
 import { timelineProjects } from "@/components/timelineProjects";
 import "react-vertical-timeline-component/style.min.css";
 import ProjectPlaceholder from "@/components/projectPlaceholder";
@@ -77,6 +78,8 @@ export default function HomeScreen() {
 
   return (
     <Main>
+      <BackToTop />
+
       <HeroSection>
         <HeroImgBG fill src="/assets/images/hero.png" />
         <ScrollDrop />

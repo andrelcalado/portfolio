@@ -93,3 +93,51 @@ li {
     width: 30px;
   }  
 }
+
+@keyframes transformSymbol {
+  0% {
+    transform: translate(-50%, 0) rotate(45deg);
+    border: 3px solid #3CFFD1;
+    width: 20px;
+    height: 20px;
+  }
+
+  20% {
+    background-color: transparent;
+    transform: translate(-50%, 0) rotate(0);
+    border: 1px solid #3CFFD1;
+    width: 20px;
+    height: 20px;
+  }
+
+  40% {
+    background-color: #3CFFD1;
+    transform: translate(-50%, 0) rotate(0);
+    border: 1px solid #3CFFD1;
+    width: 1px;
+    height: 1px;
+  }
+
+  60% {
+    background-color: #3CFFD1;
+    transform: translate(-50%, 0) rotate(0);
+    border: 0px solid #3CFFD1;
+    width: 100px;
+    height: 1px;
+  }
+
+  80% {
+    background-color: transparent;
+    transform: translate(-50%, 0) rotate(0);
+    border: 1px solid #3CFFD1;
+    width: 5px;
+    height: 5px;
+  }
+
+  100% {
+    transform: translate(-50%, 0) rotate(45deg);
+    border: 3px solid #3CFFD1;
+    width: 20px;
+    height: 20px;
+  }
+}
