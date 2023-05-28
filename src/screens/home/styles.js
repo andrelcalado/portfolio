@@ -266,7 +266,7 @@ export const ProjectsSection = styled.section`
   padding: 120px 0 70px;
   overflow: hidden;
   position: relative;
-
+  
   &::after {
     content: "";
     width: 400px;
@@ -362,7 +362,7 @@ export const TimeLineSection = styled.section`
     height: 20px;
     border: 3px solid ${theme.colors.green.light};
     transform: translate(-50%, 0) rotate(45deg);
-    animation: transformSymbol 15s cubic-bezier(0.47, 1.64, 0.41, 0.8) infinite;
+    animation: transformSymbol 12s cubic-bezier(0.47, 1.64, 0.41, 0.8) infinite;
   }
 
   &::after {

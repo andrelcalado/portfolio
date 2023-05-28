@@ -19,7 +19,7 @@ export const ProjectsSwiper = styled(Swiper)`
   }
 
   &::before {
-    left: -60px;
+    left: -70px;
     background: linear-gradient(
       90deg,
       ${theme.colors.blue.darkLight} 20%,
@@ -29,7 +29,7 @@ export const ProjectsSwiper = styled(Swiper)`
 
   &::after {
     width: 450px;
-    right: -60px;
+    right: -70px;
     background: linear-gradient(
       -90deg,
       ${theme.colors.blue.darkLight} 5%,
