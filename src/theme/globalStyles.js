@@ -15,6 +15,7 @@ export const theme = {
     },
     gray: {
       '200': '#CACBCF',
+      '250': '#B9BABA',
       '300': '#4E525D',
       '400': '#363636'
     }

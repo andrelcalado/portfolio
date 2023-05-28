@@ -5,9 +5,14 @@ import {
   displayMdBold,
   displaySmBold,
   displayX1Bold,
+  displayXsBold,
   displayXsRegular,
+  textLgMedium,
+  textMdMedium,
+  textSmMedium,
   textSmRegular,
   textX1Bold,
+  textXsRegular,
 } from "@/theme/typography";
 import {
   VerticalTimeline,
@@ -322,7 +327,7 @@ export const ProjectsSection = styled.section`
     text-align: center;
     max-width: 500px;
     margin: 0 auto 60px;
-    color: ${theme.colors.white};
+    color: ${theme.colors.gray[200]};
     position: relative;
     z-index: 5;
   }
@@ -418,8 +423,37 @@ export const TimelineComponent = styled(VerticalTimeline)`
 export const TimelineItem = styled(VerticalTimelineElement)`
   margin-bottom: 150px;
 
-  h3 {
+  & h3,
+  & h4,
+  & p {
     text-align: right;
+    max-width: 410px;
+    margin: 0 0 0 auto;
+  }
+
+  & p {
+    ${textXsRegular}
+    color: ${theme.colors.gray[250]};
+  }
+
+  & h3 {
+    ${textX1Bold}
+    color: ${theme.colors.white};
+  }
+
+  & h4 {
+    ${textSmMedium}
+    color: ${theme.colors.gray[200]};
+    margin-bottom: 10px;
+
+    &::after {
+      display: block;
+      content: "";
+      width: 60px;
+      height: 1px;
+      background-color: ${theme.colors.green.light};
+      margin: 10px 0 0 auto;
+    }
   }
 
   & .vertical-timeline-element-content {
@@ -438,8 +472,19 @@ export const TimelineItem = styled(VerticalTimelineElement)`
   }
 
   &:nth-of-type(2n) {
-    & h3 {
+    & h3,
+    & h4,
+    & p {
       text-align: left;
+      margin: 0 auto 0 0;
+    }
+
+    & h4 {
+      margin-bottom: 10px;
+
+      &::after {
+        margin: 10px auto 0 0;
+      }
     }
 
     & .vertical-timeline-element-content-arrow {
@@ -454,5 +499,27 @@ export const TimelineItem = styled(VerticalTimelineElement)`
     height: 70px;
     overflow: hidden;
     margin-left: -36px;
+  }
+
+  & .vertical-timeline-element-date {
+    top: 14px !important;
+    ${textSmMedium}
+    color: ${theme.colors.gray[200]};
+  }
+`;
+
+export const ALCodeBorderSymbol = styled.figure`
+  width: 600px;
+  height: 600px;
+  position: absolute;
+  top: 50%;
+  transform: translate(0, -50%);
+  left: -300px;
+  z-index: 20;
+
+  & svg {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
   }
 `;

@@ -1,5 +1,6 @@
-import React, { useRef, useEffect } from "react";
+import React, { useRef, useEffect, useState } from "react";
 import { Container, theme } from "@/theme/globalStyles";
+import { animated, useSpring } from "react-spring";
 import {
   HeroSection,
   Main,
@@ -24,9 +25,10 @@ import {
   TimeLineSection,
   TimelineComponent,
   TimelineItem,
+  ALCodeBorderSymbol,
 } from "./styles";
 import { timelineProjects } from "@/components/timelineProjects";
-import "react-vertical-timeline-component/style.min.css"
+import "react-vertical-timeline-component/style.min.css";
 import ProjectPlaceholder from "@/components/projectPlaceholder";
 import ALButton from "@/components/button";
 import ProjectsSlide from "@/components/projectsSwiper";
@@ -35,13 +37,32 @@ import Image from "next/image";
 import "swiper/css";
 
 export default function HomeScreen() {
+  const [lenghtAnimation, setLenghtAnimation] = useState();
+
+  const animatedStyle = useSpring({
+    strokeDasharray: lenghtAnimation,
+    from: {
+      strokeDashoffset: 0,
+      strokeDasharray: lenghtAnimation,
+    },
+    to: {
+      strokeDasharray: lenghtAnimation,
+      strokeDashoffset: lenghtAnimation,
+    },
+    config: {
+      duration: 3000,
+      tension: 280,
+      friction: 60,
+    },
+    delay: 2000,
+    loop: { reverse: true },
+  });
   let stacksMovimentRef = useRef();
-  let trackRef = useRef();
 
   useEffect(() => {
     const navLinks = gsap.utils.toArray("[data-link]");
 
-    gsap.to(stacksMovimentRef, {
+    gsap.to(stacksMovimentRef.current, {
       keyframes: [
         { y: 0, delay: 2, ease: "back.out(2)" },
         { y: -70, delay: 2, ease: "back.out(2)" },
@@ -293,16 +314,44 @@ export default function HomeScreen() {
       </ProjectsSection>
 
       <TimeLineSection id="timeline" data-js="section">
+        <ALCodeBorderSymbol>
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 541.7 729"
+          >
+            <animated.path
+              style={animatedStyle}
+              ref={(el) => {
+                if (el) {
+                  setLenghtAnimation(el.getTotalLength());
+                }
+              }}
+              stroke={theme.colors.green.light}
+              strokeWidth={1}
+              d="m327.8 3 187.1 645.4 22.8 77.6H4L213.6 3h114.2M149.5 613h242.3l-1.1-3.8L273.5 205l-2.9-9.9-2.9 9.9-117.1 404.2-1.1 3.8"
+            />
+          </svg>
+        </ALCodeBorderSymbol>
+
         <h2>Timeline</h2>
 
         <TimelineComponent>
-          {timelineProjects.reverse().map((item, i) => (
+          {timelineProjects.map((item, i) => (
             <TimelineItem
               key={i}
               date={item.period}
-              icon={<Image fill src={`/assets/images/timeline/${item.logo}.jpg`} alt={item.business + ' Logo'} />}
+              icon={
+                <Image
+                  fill
+                  src={`/assets/images/timeline/${item.logo}.jpg`}
+                  alt={item.business + " Logo"}
+                />
+              }
             >
               <h3 className="vertical-timeline-element-title">{item.title}</h3>
+              <h4>{item.business}</h4>
+              <p>{item.desc}</p>
             </TimelineItem>
           ))}
         </TimelineComponent>
