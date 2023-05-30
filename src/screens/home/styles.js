@@ -378,7 +378,7 @@ export const TimeLineSection = styled.section`
     );
     position: absolute;
     filter: blur(200px);
-    opacity: .7;
+    opacity: 0.7;
   }
 
   & h2 {
@@ -545,6 +545,9 @@ export const ContactSection = styled.section`
   padding: 120px 0 70px;
   position: relative;
   min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 
   &::after {
     content: "";
@@ -568,7 +571,7 @@ export const ContactSection = styled.section`
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     text-align: center;
-    margin: 0 auto 50px;
+    margin: 0 auto 90px;
     position: relative;
     width: fit-content;
     z-index: 5;
@@ -617,4 +620,20 @@ export const ContactCardsContainer = styled.div`
   display: flex;
   justify-content: center;
   gap: 30px;
+`;
+
+export const ContactSymbolAnimated = styled(SkillsSymbolAnimated)`
+  & img {
+    filter: invert(1) brightness(20);
+  }
+`;
+
+export const ContactFooterContainer = styled(SkillsFooterContainer)`
+  margin: 140px auto 0;
+
+  &::before,
+  &::after {
+    background-color: ${theme.colors.white};
+    height: 2px;
+  }
 `;

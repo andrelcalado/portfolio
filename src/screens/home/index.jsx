@@ -29,6 +29,8 @@ import {
   ContactSection,
   BGVideo,
   ContactCardsContainer,
+  ContactSymbolAnimated,
+  ContactFooterContainer,
 } from "./styles";
 import BackToTop from "@/components/backToTop";
 import { timelineProjects } from "@/components/timelineProjects";
@@ -376,8 +378,32 @@ export default function HomeScreen() {
           <h2>Contact</h2>
 
           <ContactCardsContainer>
-            <ContactCard label="/andrelcalado" logo="github" type="github" />
+            <ContactCard
+              href="https://github.com/andrelcalado"
+              label="/andrelcalado"
+              logo="github"
+              type="github"
+            />
+            <ContactCard
+              href="https://www.linkedin.com/in/andreluisgp/"
+              label="/andreluisgp"
+              logo="linkedin"
+              type="linkedin"
+            />
+            <ContactCard
+              href="mailto: andrelcalad@gmail.com"
+              label="andrelcalad@gmail.com"
+              logo="email"
+              type="email"
+            />
+            <ContactCard label="+5585996419694" logo="phone" type="phone" />
           </ContactCardsContainer>
+
+          <ContactFooterContainer>
+            <ContactSymbolAnimated>
+              <Image fill src="/assets/icons/al-symbol.svg" alt="AL Symbol" />
+            </ContactSymbolAnimated>
+          </ContactFooterContainer>
         </Container>
       </ContactSection>
     </Main>
