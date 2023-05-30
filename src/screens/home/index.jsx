@@ -26,6 +26,9 @@ import {
   TimelineComponent,
   TimelineItem,
   ALCodeBorderSymbol,
+  ContactSection,
+  BGVideo,
+  ContactCardsContainer,
 } from "./styles";
 import BackToTop from "@/components/backToTop";
 import { timelineProjects } from "@/components/timelineProjects";
@@ -35,6 +38,7 @@ import ALButton from "@/components/button";
 import ProjectsSlide from "@/components/projectsSwiper";
 import { gsap } from "gsap";
 import Image from "next/image";
+import ContactCard from "@/components/contactCard";
 import "swiper/css";
 
 export default function HomeScreen() {
@@ -359,6 +363,23 @@ export default function HomeScreen() {
           ))}
         </TimelineComponent>
       </TimeLineSection>
+
+      <ContactSection id="contact" data-js="section">
+        <BGVideo autoPlay="autoplay" loop>
+          <source
+            src={require("../../assets/videos/codding.mp4")}
+            type="video/mp4"
+          />
+        </BGVideo>
+
+        <Container>
+          <h2>Contact</h2>
+
+          <ContactCardsContainer>
+            <ContactCard label="/andrelcalado" logo="github" type="github" />
+          </ContactCardsContainer>
+        </Container>
+      </ContactSection>
     </Main>
   );
 }

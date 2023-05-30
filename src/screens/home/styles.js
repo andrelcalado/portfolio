@@ -27,7 +27,7 @@ export const Main = styled.main`
 export const HeroSection = styled.section`
   position: relative;
   width: 100%;
-  height: 100vh;
+  min-height: 100vh;
   display: flex;
   align-items: center;
 
@@ -39,11 +39,11 @@ export const HeroSection = styled.section`
     left: -10%;
     background: radial-gradient(
       circle,
-      rgba(60, 255, 209, 0.5) 0%,
-      ${theme.colors.blue.darkLight} 54%
+      ${theme.colors.blue.darkLight} 0%,
+      rgba(60, 255, 209, 0.5) 54%
     );
     position: absolute;
-    filter: blur(150px);
+    filter: blur(200px);
   }
 `;
 
@@ -133,7 +133,7 @@ export const SkillsSectionWrapper = styled.div`
   position: relative;
   z-index: 3;
   padding: 50px 0;
-  height: 100vh;
+  min-height: 100vh;
 
   & h2 {
     ${displaySmBold}
@@ -262,11 +262,11 @@ export const SkillsSymbolAnimated = styled.figure`
 
 // Projects Section
 export const ProjectsSection = styled.section`
-  height: 100vh;
+  min-height: 100vh;
   padding: 120px 0 70px;
   overflow: hidden;
   position: relative;
-  
+
   &::after {
     content: "";
     width: 400px;
@@ -275,11 +275,11 @@ export const ProjectsSection = styled.section`
     right: 50%;
     background: radial-gradient(
       circle,
-      rgba(60, 255, 209, 0.5) 0%,
-      ${theme.colors.blue.darkLight} 54%
+      ${theme.colors.blue.darkLight} 0%,
+      rgba(60, 255, 209, 0.5) 54%
     );
     position: absolute;
-    filter: blur(150px);
+    filter: blur(200px);
   }
 
   & h2 {
@@ -369,15 +369,16 @@ export const TimeLineSection = styled.section`
     content: "";
     width: 400px;
     height: 400px;
-    top: -100px;
-    left: 150px;
+    top: 0;
+    right: 150px;
     background: radial-gradient(
       circle,
-      rgba(60, 255, 209, 0.5) 0%,
-      ${theme.colors.blue.darkLight} 54%
+      ${theme.colors.blue.darkLight} 0%,
+      rgba(60, 255, 209, 0.5) 54%
     );
     position: absolute;
-    filter: blur(150px);
+    filter: blur(200px);
+    opacity: .7;
   }
 
   & h2 {
@@ -431,6 +432,7 @@ export const TimelineComponent = styled(VerticalTimeline)`
       rgba(1, 21, 28, 1) 0%,
       rgba(60, 255, 209, 1) 100%
     );
+    height: 95%;
   }
 `;
 
@@ -536,4 +538,83 @@ export const ALCodeBorderSymbol = styled.figure`
     height: 100%;
     object-fit: contain;
   }
+`;
+
+// Contact Section
+export const ContactSection = styled.section`
+  padding: 120px 0 70px;
+  position: relative;
+  min-height: 100vh;
+
+  &::after {
+    content: "";
+    width: 100%;
+    height: 100px;
+    top: -100px;
+    left: 0;
+    background: linear-gradient(
+      180deg,
+      ${theme.colors.blue.darkLight} 0%,
+      rgba(60, 255, 209, 0.5) 100%
+    );
+    position: absolute;
+    opacity: 0.2;
+  }
+
+  & h2 {
+    ${displaySmBold}
+    background: -webkit-linear-gradient(0deg, ${theme.colors.green
+      .light} 30%, ${theme.colors.green.shadow} 90%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-align: center;
+    margin: 0 auto 50px;
+    position: relative;
+    width: fit-content;
+    z-index: 5;
+
+    &::after {
+      content: "";
+      position: absolute;
+      height: 8px;
+      width: 8px;
+      background-color: ${theme.colors.green.light};
+      right: -20px;
+      bottom: 9px;
+      animation: typing 1.5s infinite ease-out;
+      transition: none;
+      border-radius: 1px;
+    }
+
+    &::before {
+      content: "";
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 200px;
+      height: 5px;
+      background-color: ${theme.colors.black};
+      filter: blur(15px);
+      border-radius: 100%;
+      opacity: 1;
+    }
+  }
+`;
+
+export const BGVideo = styled.video`
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  top: 0;
+  left: 0;
+  object-fit: cover;
+  opacity: 0.6;
+  filter: blur(1px);
+`;
+
+export const ContactCardsContainer = styled.div`
+  display: flex;
+  justify-content: center;
+  gap: 30px;
 `;
