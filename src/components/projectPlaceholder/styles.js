@@ -1,5 +1,5 @@
-import { theme } from "@/theme/globalStyles";
-import { textXsSemiBold } from "@/theme/typography";
+import { theme } from "../../theme/globalStyles";
+import { textXsSemiBold } from "../../theme/typography";
 import styled from "styled-components";
 
 export const ProjectPlaceholderCard = styled.div`

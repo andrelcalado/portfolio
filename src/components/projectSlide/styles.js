@@ -1,8 +1,8 @@
 import Image from "next/image";
 import Link from "next/link";
 import { SwiperSlide } from "swiper/react";
-import { theme } from "@/theme/globalStyles";
-import { textMdBold } from "@/theme/typography";
+import { theme } from "../../theme/globalStyles";
+import { textMdBold } from "../../theme/typography";
 import styled from "styled-components";
 
 export const ProjectSlide = styled(SwiperSlide)`

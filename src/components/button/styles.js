@@ -1,6 +1,6 @@
 import Link from "next/link";
 import { theme } from "../../theme/globalStyles";
-import { textXsMedium } from "@/theme/typography";
+import { textXsMedium } from "../../theme/typography";
 import styled from "styled-components";
 
 export const ButtonComponent = styled(Link)`

@@ -1,6 +1,5 @@
 import React, { useRef, useEffect, useState } from "react";
-import { Container, theme } from "@/theme/globalStyles";
-import { animated, useSpring } from "react-spring";
+import { Container, theme } from "../../theme/globalStyles";
 import {
   HeroSection,
   Main,
@@ -32,44 +31,25 @@ import {
   ContactSymbolAnimated,
   ContactFooterContainer,
 } from "./styles";
-import BackToTop from "@/components/backToTop";
-import { timelineProjects } from "@/components/timelineProjects";
+import BackToTop from "../../components/backToTop";
+import { timelineProjects } from "../../components/timelineProjects";
 import "react-vertical-timeline-component/style.min.css";
-import ProjectPlaceholder from "@/components/projectPlaceholder";
-import ALButton from "@/components/button";
-import ProjectsSlide from "@/components/projectsSwiper";
-import { gsap } from "gsap";
+import ProjectPlaceholder from "../../components/projectPlaceholder";
+import ALButton from "../../components/button";
+import ProjectsSlide from "../../components/projectsSwiper";
+import gsap from "gsap";
+import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
 import Image from "next/image";
-import ContactCard from "@/components/contactCard";
+import ContactCard from "../../components/contactCard";
 import "swiper/css";
+gsap.registerPlugin(ScrollTrigger);
 
 export default function HomeScreen() {
-  const [lenghtAnimation, setLenghtAnimation] = useState();
-
-  const animatedStyle = useSpring({
-    strokeDasharray: lenghtAnimation,
-    from: {
-      strokeDashoffset: 0,
-      strokeDasharray: lenghtAnimation,
-    },
-    to: {
-      strokeDasharray: lenghtAnimation,
-      strokeDashoffset: lenghtAnimation,
-    },
-    config: {
-      duration: 3000,
-      tension: 280,
-      friction: 60,
-    },
-    delay: 2000,
-    loop: { reverse: true },
-  });
   let stacksMovimentRef = useRef();
 
   useEffect(() => {
-    const navLinks = gsap.utils.toArray("[data-link]");
-
-    gsap.to(stacksMovimentRef.current, {
+    // Hero Stacks Animation
+    gsap.to(stacksMovimentRef, {
       keyframes: [
         { y: 0, delay: 2, ease: "back.out(2)" },
         { y: -70, delay: 2, ease: "back.out(2)" },
@@ -80,6 +60,71 @@ export default function HomeScreen() {
       repeatDelay: 2,
       yoyo: true,
     });
+
+    // Skills ScrollTrigger
+    const skillsTimeline = gsap.timeline({
+      scrollTrigger: {
+        trigger: ".skillsTitle",
+        start: "top 85%",
+        end: "top 55%",
+        scrub: 1,
+      },
+    });
+
+    skillsTimeline
+      .to(".skillsTitle", { opacity: 1, y: -40 })
+      .to(".skillsCards", { opacity: 1, y: -40 });
+
+    // Projects ScrollTrigger
+    const projectsTimeline = gsap.timeline({
+      scrollTrigger: {
+        trigger: ".projectsTitle",
+        start: "top 75%",
+        end: "top 50%",
+        scrub: 1,
+      },
+    });
+
+    projectsTimeline
+      .to(".projectsTitle", { opacity: 1, y: -40 })
+      .to(".projectsDesc", { opacity: 1, y: -40 })
+      .to(".projectsSlide", { opacity: 1, y: -40 });
+
+    // Timeline ScrollTrigger
+    const timelineTimeline = gsap.timeline({
+      scrollTrigger: {
+        trigger: ".timelineTitle",
+        start: "top 85%",
+        end: "top 75%",
+        scrub: 1,
+      },
+    });
+
+    timelineTimeline.to(".timelineTitle", { opacity: 1, y: -40 });
+
+    const borderTimeline = gsap.timeline({
+      scrollTrigger: {
+        trigger: ".ALCodeBorderSymbol",
+        start: "top 75%",
+        end: "top 0%",
+        scrub: 1,
+      },
+    });
+    borderTimeline.to(".ALCodeBorderSymbol", { strokeDashoffset: 0, y: 40 });
+
+    // Contact ScrollTrigger
+    const contactTimeline = gsap.timeline({
+      scrollTrigger: {
+        trigger: ".contactTitle",
+        start: "top 80%",
+        end: "top 60%",
+        scrub: 1,
+      },
+    });
+
+    contactTimeline
+      .to(".contactTitle", { opacity: 1, y: -40 })
+      .to(".contactCards", { opacity: 1, y: -40 });
   }, []);
 
   return (
@@ -138,9 +183,9 @@ export default function HomeScreen() {
 
         <SkillsSectionWrapper>
           <Container>
-            <h2>Skills</h2>
+            <h2 className="skillsTitle">Skills</h2>
 
-            <SkillsCardsContainer>
+            <SkillsCardsContainer className="skillsCards">
               <SkillCard>
                 <SkillLogo>
                   <svg
@@ -300,13 +345,13 @@ export default function HomeScreen() {
       </SkillsSection>
 
       <ProjectsSection id="projects" data-js="section">
-        <h2>Projects</h2>
-        <p>
+        <h2 className="projectsTitle">Projects</h2>
+        <p className="projectsDesc">
           Some of the bests projects that i developed alone as front end
           developer and projects that i developed with the top develop teams.
         </p>
 
-        <ProjectsSlideContainer>
+        <ProjectsSlideContainer className="projectsSlide">
           <ProjectsSlide />
         </ProjectsSlideContainer>
 
@@ -329,13 +374,8 @@ export default function HomeScreen() {
             fill="none"
             viewBox="0 0 541.7 729"
           >
-            <animated.path
-              style={animatedStyle}
-              ref={(el) => {
-                if (el) {
-                  setLenghtAnimation(el.getTotalLength());
-                }
-              }}
+            <path
+              className="ALCodeBorderSymbol"
               stroke={theme.colors.green.light}
               strokeWidth={1}
               d="m327.8 3 187.1 645.4 22.8 77.6H4L213.6 3h114.2M149.5 613h242.3l-1.1-3.8L273.5 205l-2.9-9.9-2.9 9.9-117.1 404.2-1.1 3.8"
@@ -343,7 +383,7 @@ export default function HomeScreen() {
           </svg>
         </ALCodeBorderSymbol>
 
-        <h2>Timeline</h2>
+        <h2 className="timelineTitle">Timeline</h2>
 
         <TimelineComponent>
           {timelineProjects.map((item, i) => (
@@ -375,9 +415,9 @@ export default function HomeScreen() {
         </BGVideo>
 
         <Container>
-          <h2>Contact</h2>
+          <h2 className="contactTitle">Contact</h2>
 
-          <ContactCardsContainer>
+          <ContactCardsContainer className="contactCards">
             <ContactCard
               href="https://github.com/andrelcalado"
               label="/andrelcalado"

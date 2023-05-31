@@ -1,6 +1,6 @@
 import styled from "styled-components";
 import { Swiper } from "swiper/react";
-import { theme } from "@/theme/globalStyles";
+import { theme } from "../../theme/globalStyles";
 
 export const ProjectsSwiper = styled(Swiper)`
   position: relative;

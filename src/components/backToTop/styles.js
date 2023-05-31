@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { theme } from "@/theme/globalStyles";
+import { theme } from "../../theme/globalStyles";
 import css from "styled-jsx/css";
 
 export const BackToTopStyled = styled.button`

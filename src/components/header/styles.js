@@ -1,6 +1,6 @@
-import { theme } from "@/theme/globalStyles";
+import { theme } from "../../theme/globalStyles";
 import styled, { css } from "styled-components";
-import { textMdRegular } from "@/theme/typography";
+import { textMdRegular } from "../../theme/typography";
 
 export const HeaderContainer = styled.header`
   position: fixed;

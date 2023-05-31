@@ -5,15 +5,12 @@ import {
   displayMdBold,
   displaySmBold,
   displayX1Bold,
-  displayXsBold,
   displayXsRegular,
-  textLgMedium,
-  textMdMedium,
   textSmMedium,
   textSmRegular,
   textX1Bold,
   textXsRegular,
-} from "@/theme/typography";
+} from "../../theme/typography";
 import {
   VerticalTimeline,
   VerticalTimelineElement,
@@ -136,6 +133,8 @@ export const SkillsSectionWrapper = styled.div`
   min-height: 100vh;
 
   & h2 {
+    opacity: 0;
+    top: 40px;
     ${displaySmBold}
     background: -webkit-linear-gradient(0deg, ${theme.colors.green
       .light} -20%, ${theme.colors.blue.dark} 50%);
@@ -179,11 +178,13 @@ export const SkillsCardsContainer = styled.div`
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 10px;
+  position: relative;
+  top: 40px;
+  opacity: 0;
 `;
 
 export const SkillCard = styled.div`
   width: 100%;
-  /* max-width: 300px; */
   height: 80px;
   padding: 20px;
   background-color: ${theme.colors.white};
@@ -282,6 +283,12 @@ export const ProjectsSection = styled.section`
     filter: blur(200px);
   }
 
+  & h2,
+  & p {
+    top: 40px;
+    opacity: 0;
+  }
+
   & h2 {
     ${displaySmBold}
     background: -webkit-linear-gradient(0deg, ${theme.colors.green
@@ -335,6 +342,9 @@ export const ProjectsSection = styled.section`
 
 export const ProjectsSlideContainer = styled.div`
   display: flex;
+  position: relative;
+  top: 40px;
+  opacity: 0;
 `;
 
 export const ProjectsPlaceholderContainer = styled.div`
@@ -391,7 +401,9 @@ export const TimeLineSection = styled.section`
     margin: 0 auto 50px;
     position: relative;
     width: fit-content;
+    opacity: 0;
     z-index: 5;
+    top: 40px;
 
     &::after {
       content: "";
@@ -537,6 +549,11 @@ export const ALCodeBorderSymbol = styled.figure`
     width: 100%;
     height: 100%;
     object-fit: contain;
+
+    & path {
+      stroke-dasharray: 300;
+      stroke-dashoffset: 200;
+    }
   }
 `;
 
@@ -575,6 +592,8 @@ export const ContactSection = styled.section`
     position: relative;
     width: fit-content;
     z-index: 5;
+    opacity: 0;
+    top: 40px;
 
     &::after {
       content: "";
@@ -619,7 +638,10 @@ export const BGVideo = styled.video`
 export const ContactCardsContainer = styled.div`
   display: flex;
   justify-content: center;
+  position: relative;
+  opacity: 0;
   gap: 30px;
+  top: 40px;
 `;
 
 export const ContactSymbolAnimated = styled(SkillsSymbolAnimated)`

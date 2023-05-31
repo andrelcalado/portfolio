@@ -1,6 +1,6 @@
-import { theme } from "@/theme/globalStyles";
+import { theme } from "../../theme/globalStyles";
 import styled from "styled-components";
-import { textXsRegular } from "@/theme/typography";
+import { textXsRegular } from "../../theme/typography";
 
 export const FooterSection = styled.footer`
   ${textXsRegular}
