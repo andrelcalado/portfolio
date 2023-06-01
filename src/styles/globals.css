@@ -151,3 +151,15 @@ li {
     height: 20px;
   }
 }
+
+@keyframes ballBlurOpacity {
+  0% {
+    opacity: .5;
+    filter: blur(200px);
+  }
+
+  100% {
+    opacity: 1;
+    filter: blur(220px);
+  }
+}

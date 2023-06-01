@@ -24,7 +24,7 @@ export const ProjectPlaceholderCard = styled.div`
     filter: brightness(0);
   }
 
-  & p {
+  & > p {
     ${textXsSemiBold}
     text-align: left;
     color: ${theme.colors.blue.dark};

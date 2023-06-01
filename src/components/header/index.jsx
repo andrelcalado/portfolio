@@ -1,6 +1,7 @@
 import { Container } from "../../theme/globalStyles";
 import Link from "next/link";
 import React, { useEffect, useState } from "react";
+import gsap from "gsap";
 import {
   HeaderContainer,
   HeaderWrapper,
@@ -35,7 +36,7 @@ export default function Header() {
     <HeaderContainer scrolled={scrolled}>
       <Container>
         <HeaderWrapper scrolled={scrolled}>
-          <LogoContainer scrolled={scrolled}>
+          <LogoContainer className="logoFigure" scrolled={scrolled}>
             <svg
               id="Layer_1"
               x="0"
@@ -50,7 +51,7 @@ export default function Header() {
 
           <NavContainer scrolled={scrolled}>
             <ul>
-              <li>
+              <li className="navItem1">
                 <Link
                   href="skills"
                   onClick={(e) => {
@@ -68,7 +69,7 @@ export default function Header() {
                   <span>Skills</span>
                 </Link>
               </li>
-              <li>
+              <li className="navItem2">
                 <Link
                   href="projects"
                   onClick={(e) => {
@@ -87,7 +88,7 @@ export default function Header() {
                   <span>Projects</span>
                 </Link>
               </li>
-              <li>
+              <li className="navItem3">
                 <Link
                   href="timeline"
                   onClick={(e) => {
@@ -106,7 +107,7 @@ export default function Header() {
                   <span>Timeline</span>
                 </Link>
               </li>
-              <li>
+              <li className="navItem4">
                 <Link
                   href="#contact"
                   onClick={(e) => {
@@ -125,7 +126,7 @@ export default function Header() {
                   <span>Contact</span>
                 </Link>
               </li>
-              <li>
+              <li className="navItem5">
                 <Link href="#skills">
                   <svg
                     xmlns="http://www.w3.org/2000/svg"

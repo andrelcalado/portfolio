@@ -25,15 +25,18 @@ export const HeaderContainer = styled.header`
           ${scrolled ? "rgba(1,21,28, 0.9)" : "transparent"};
         backdrop-filter: blur(${scrolled ? "5px" : "0"});
         -webkit-backdrop-filter: blur(${scrolled ? "5px" : "0"});
-        transition: .5s ease-out;
+        transition: 0.5s ease-out;
         pointer-events: none;
       }
     `}
 `;
 
 export const LogoContainer = styled.figure`
+  opacity: 0;
+  top: -40px;
+  position: relative;
   width: ${({ scrolled }) => (scrolled ? "30px" : "60px")};
-  transition: .5s ease-out;
+  transition: 0.5s ease-out;
 
   & svg {
     width: 100%;
@@ -47,12 +50,12 @@ export const HeaderWrapper = styled.div`
   align-items: center;
   width: 100%;
   padding: ${({ scrolled }) => (scrolled ? "20px 0 " : "30px 0")};
-  transition: .5s ease-out;
+  transition: 0.5s ease-out;
 `;
 
 export const NavContainer = styled.nav`
-  margin-top: ${({scrolled}) => scrolled ? '0' : '-50px' };
-  transition: .5s ease-out;
+  margin-top: ${({ scrolled }) => (scrolled ? "0" : "-50px")};
+  transition: 0.5s ease-out;
 
   & ul {
     display: flex;
@@ -60,6 +63,9 @@ export const NavContainer = styled.nav`
     align-items: center;
 
     & li {
+      opacity: 0;
+      top: -40px;
+      position: relative;
       ${textMdRegular}
       color: ${theme.colors.white};
       cursor: pointer;

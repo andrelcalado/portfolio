@@ -7,9 +7,9 @@ import {
   ContactCardField,
 } from "./styles";
 
-export default function ContactCard({ logo, type, label, href }) {
+export default function ContactCard({ className, logo, type, label, href }) {
   return (
-    <ContactCardField href={href} target="_blank">
+    <ContactCardField className={className} href={href} target="_blank">
       <BorderBG className="borderBG" />
 
       <CardWithLogo className="cardWithLogo">

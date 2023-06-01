@@ -82,10 +82,12 @@ export const CardTextsContainer = styled.div`
 
 export const ContactCardField = styled.a`
   position: relative;
+  opacity: 0;
+  top: 40px;
   transition: 1s cubic-bezier(0.69, -0.01, 0.24, 1);
 
   &:hover {
-    transform: translate(5px, -5px);
+    transform: translate(5px, -45px) !important;
 
     & .borderBG {
       top: 50%;

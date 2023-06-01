@@ -46,19 +46,27 @@ export const HeroSection = styled.section`
 
 export const HeroImgBG = styled(Image)`
   object-fit: contain;
-  transform: translate(100px, 40px);
+  transform: translate(100px, 150px);
   pointer-events: none;
+  opacity: 0;
 `;
 
 export const HeroTexts = styled.div`
   position: relative;
   z-index: 5;
 
-  & h2 {
+  & > h2,
+  & > h1 {
+    position: relative;
+    top: 40px;
+    opacity: 0;
+  }
+
+  & > h2 {
     ${displayXsRegular}
   }
 
-  & h1 {
+  & > h1 {
     ${displayX1Bold}
   }
 `;
@@ -67,6 +75,9 @@ export const StacksContainer = styled.div`
   height: 53px;
   overflow: hidden;
   margin-bottom: 25px;
+  opacity: 0;
+  position: relative;
+  top: 40px;
 `;
 
 export const StacksMoviment = styled.div`
@@ -82,6 +93,9 @@ export const StacksMoviment = styled.div`
 export const HeroCTA = styled.div`
   display: flex;
   gap: 20px;
+  top: 40px;
+  position: relative;
+  opacity: 0;
 `;
 
 export const ScrollDrop = styled.div`
@@ -92,7 +106,8 @@ export const ScrollDrop = styled.div`
   border-radius: 15px;
   border: 1px solid ${theme.colors.green.light};
   position: absolute;
-  bottom: 30px;
+  bottom: -10px;
+  opacity: 0;
 
   &::after {
     content: "";
@@ -283,13 +298,13 @@ export const ProjectsSection = styled.section`
     filter: blur(200px);
   }
 
-  & h2,
-  & p {
+  & > h2,
+  & > p {
     top: 40px;
     opacity: 0;
   }
 
-  & h2 {
+  & > h2 {
     ${displaySmBold}
     background: -webkit-linear-gradient(0deg, ${theme.colors.green
       .light} 30%, ${theme.colors.green.shadow} 90%);
@@ -329,7 +344,7 @@ export const ProjectsSection = styled.section`
     }
   }
 
-  & p {
+  & > p {
     ${textSmRegular}
     text-align: center;
     max-width: 500px;
@@ -638,10 +653,7 @@ export const BGVideo = styled.video`
 export const ContactCardsContainer = styled.div`
   display: flex;
   justify-content: center;
-  position: relative;
-  opacity: 0;
   gap: 30px;
-  top: 40px;
 `;
 
 export const ContactSymbolAnimated = styled(SkillsSymbolAnimated)`
