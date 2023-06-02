@@ -16,7 +16,6 @@ export default function ProjectsSlide() {
     <ProjectsSwiper
       slidesPerView={3}
       spaceBetween={20}
-      onSlideChange={() => console.log("slide change")}
       modules={[Navigation, Pagination, Autoplay]}
       navigation
       pagination={{ clickable: true }}

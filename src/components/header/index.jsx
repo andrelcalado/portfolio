@@ -1,36 +1,53 @@
 import { Container } from "../../theme/globalStyles";
 import Link from "next/link";
-import React, { useEffect, useState } from "react";
-import gsap from "gsap";
+import React, { useEffect, useRef, useState } from "react";
 import {
   HeaderContainer,
   HeaderWrapper,
   LogoContainer,
   NavContainer,
+  NavLinkItem,
 } from "./styles";
+import { goToSection } from "../../utils/actions";
 
 export default function Header() {
   const [scrolled, setScrolled] = useState(false);
+  const [activeSection, setActiveSection] = useState();
+  const sections = useRef([]);
+
+  const handleScroll = () => {
+    const pageYOffset = window.pageYOffset;
+    let newActiveSection = null;
+
+    sections.current.forEach((section) => {
+      const sectionOffsetTop = section.offsetTop;
+      const sectionHeight = section.offsetHeight;
+
+      if (
+        pageYOffset >= sectionOffsetTop / 1.1
+      ) {
+        newActiveSection = section.id;
+      }
+    });
+
+    setActiveSection(newActiveSection);
+  };
 
   useEffect(() => {
+    sections.current = document.querySelectorAll("[data-js=section]");
     window.addEventListener("scroll", () => {
       setScrolled(window.scrollY > 0);
+      handleScroll();
     });
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
   }, []);
 
-  const goToSection = (secId) => {
-    const sections = document.querySelectorAll("[data-js=section]");
-
-    sections?.forEach((item) => {
-      item.id === secId
-        ? item.scrollIntoView({
-            behavior: "smooth",
-            block: "start",
-            inline: "nearest",
-          })
-        : null;
-    });
-  };
+  useEffect(() => {
+    console.log(activeSection);
+  }, [activeSection]);
 
   return (
     <HeaderContainer scrolled={scrolled}>
@@ -51,7 +68,10 @@ export default function Header() {
 
           <NavContainer scrolled={scrolled}>
             <ul>
-              <li className="navItem1">
+              <NavLinkItem
+                active={activeSection === "skills"}
+                className="navItem1"
+              >
                 <Link
                   href="skills"
                   onClick={(e) => {
@@ -68,8 +88,11 @@ export default function Header() {
                   </svg>
                   <span>Skills</span>
                 </Link>
-              </li>
-              <li className="navItem2">
+              </NavLinkItem>
+              <NavLinkItem
+                active={activeSection === "projects"}
+                className="navItem2"
+              >
                 <Link
                   href="projects"
                   onClick={(e) => {
@@ -87,8 +110,11 @@ export default function Header() {
                   </svg>
                   <span>Projects</span>
                 </Link>
-              </li>
-              <li className="navItem3">
+              </NavLinkItem>
+              <NavLinkItem
+                active={activeSection === "timeline"}
+                className="navItem3"
+              >
                 <Link
                   href="timeline"
                   onClick={(e) => {
@@ -106,8 +132,11 @@ export default function Header() {
                   </svg>
                   <span>Timeline</span>
                 </Link>
-              </li>
-              <li className="navItem4">
+              </NavLinkItem>
+              <NavLinkItem
+                active={activeSection === "contact"}
+                className="navItem4"
+              >
                 <Link
                   href="#contact"
                   onClick={(e) => {
@@ -125,8 +154,8 @@ export default function Header() {
                   </svg>
                   <span>Contact</span>
                 </Link>
-              </li>
-              <li className="navItem5">
+              </NavLinkItem>
+              <NavLinkItem className="navItem5">
                 <Link href="#skills">
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
@@ -137,7 +166,7 @@ export default function Header() {
                   </svg>
                   <span>Resume</span>
                 </Link>
-              </li>
+              </NavLinkItem>
             </ul>
           </NavContainer>
         </HeaderWrapper>

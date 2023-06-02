@@ -60,6 +60,7 @@ export default function Preloading() {
         opacity: 1,
         y: 40,
         duration: 1,
+        delay: -1,
       })
       .to(".heroText1", {
         opacity: 1,
@@ -97,6 +98,7 @@ export default function Preloading() {
         y: 40,
         opacity: 1,
         duration: 1,
+        delay: -1,
       })
       .to(".navItem1", {
         y: 40,

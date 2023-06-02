@@ -38,6 +38,7 @@ import ProjectPlaceholder from "../../components/projectPlaceholder";
 import ALButton from "../../components/button";
 import ProjectsSlide from "../../components/projectsSwiper";
 import gsap from "gsap";
+import { goToSection } from "../../utils/actions";
 import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
 import Image from "next/image";
 import ContactCard from "../../components/contactCard";
@@ -158,7 +159,15 @@ export default function HomeScreen() {
               </StacksContainer>
 
               <HeroCTA className="heroText4">
-                <ALButton href="#">See My Job</ALButton>
+                <ALButton
+                  href="#projects"
+                  onClick={(e) => {
+                    e.preventDefault();
+                    goToSection("projects");
+                  }}
+                >
+                  See My Job
+                </ALButton>
                 <ALButton href="https://github.com/andrelcalado">
                   <svg
                     xmlns="http://www.w3.org/2000/svg"

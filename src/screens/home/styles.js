@@ -282,6 +282,9 @@ export const ProjectsSection = styled.section`
   padding: 120px 0 70px;
   overflow: hidden;
   position: relative;
+  flex-direction: column;
+  justify-content: center;
+  display: flex;
 
   &::after {
     content: "";
@@ -360,6 +363,36 @@ export const ProjectsSlideContainer = styled.div`
   position: relative;
   top: 40px;
   opacity: 0;
+
+  &::after,
+  &::before {
+    content: "";
+    position: absolute;
+    top: -20px;
+    height: 115%;
+    width: 350px;
+    z-index: 5;
+    pointer-events: none;
+  }
+
+  &::before {
+    left: 0;
+    background: linear-gradient(
+      90deg,
+      ${theme.colors.blue.darkLight} 20%,
+      rgba(1, 21, 28, 0) 80%
+    );
+  }
+
+  &::after {
+    width: 450px;
+    right: 0;
+    background: linear-gradient(
+      -90deg,
+      ${theme.colors.blue.darkLight} 5%,
+      rgba(1, 21, 28, 0) 40%
+    );
+  }
 `;
 
 export const ProjectsPlaceholderContainer = styled.div`

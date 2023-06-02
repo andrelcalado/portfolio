@@ -61,34 +61,36 @@ export const NavContainer = styled.nav`
     display: flex;
     gap: 30px;
     align-items: center;
-
-    & li {
-      opacity: 0;
-      top: -40px;
-      position: relative;
-      ${textMdRegular}
-      color: ${theme.colors.white};
-      cursor: pointer;
-
-      & a {
-        display: flex;
-        gap: 5px;
-        align-items: center;
-      }
-
-      & svg {
-        width: 15px;
-        flex-shrink: 0;
-      }
-
-      &:hover {
-        transform: scale(1.04);
-        color: ${theme.colors.green.light};
-
-        & svg {
-          fill: ${theme.colors.green.light};
-        }
-      }
-    }
   }
+`;
+
+export const NavLinkItem = styled.li`
+  ${({ active }) => css`
+    opacity: 0;
+    top: -40px;
+    position: relative;
+    ${textMdRegular}
+    color: ${theme.colors.white};
+    cursor: pointer;
+
+    & a {
+      display: flex;
+      gap: 5px;
+      align-items: center;
+    }
+
+    & svg {
+      width: 15px;
+      flex-shrink: 0;
+    }
+
+    ${active ? "" : "&:hover {"}
+    transform: scale(1.04);
+    color: ${theme.colors.green.light};
+
+    & svg {
+      fill: ${theme.colors.green.light};
+    }
+    ${active ? "" : "}"}
+  `}
 `;

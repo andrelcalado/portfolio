@@ -7,36 +7,6 @@ export const ProjectsSwiper = styled(Swiper)`
   max-width: 1400px;
   overflow: unset !important;
 
-  &::after,
-  &::before {
-    content: "";
-    position: absolute;
-    top: -20px;
-    height: 115%;
-    width: 350px;
-    z-index: 5;
-    pointer-events: none;
-  }
-
-  &::before {
-    left: -70px;
-    background: linear-gradient(
-      90deg,
-      ${theme.colors.blue.darkLight} 20%,
-      rgba(1, 21, 28, 0) 80%
-    );
-  }
-
-  &::after {
-    width: 450px;
-    right: -70px;
-    background: linear-gradient(
-      -90deg,
-      ${theme.colors.blue.darkLight} 5%,
-      rgba(1, 21, 28, 0) 40%
-    );
-  }
-
   & .swiper-pagination {
     bottom: -40px;
     display: flex;
