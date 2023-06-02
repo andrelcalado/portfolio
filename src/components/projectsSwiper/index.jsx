@@ -174,8 +174,8 @@ export default function ProjectsSlide() {
 
         <ProjectInfos className="projectInfos">
           <ProjectCTAContainer className="projectCTAContainer">
-            <ProjectCTA target="_blank" href="#">
-              <Image fill src="/assets/icons/youtube.svg" alt="youtube Icon" />
+            <ProjectCTA target="_blank" href="https://www.fom.com.br/">
+              <Image fill src="/assets/icons/browser.svg" alt="browser Icon" />
             </ProjectCTA>
           </ProjectCTAContainer>
 

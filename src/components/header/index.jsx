@@ -21,7 +21,6 @@ export default function Header() {
 
     sections.current.forEach((section) => {
       const sectionOffsetTop = section.offsetTop;
-      const sectionHeight = section.offsetHeight;
 
       if (
         pageYOffset >= sectionOffsetTop / 1.1
@@ -156,7 +155,7 @@ export default function Header() {
                 </Link>
               </NavLinkItem>
               <NavLinkItem className="navItem5">
-                <Link href="#skills">
+                <Link href="/assets/downloads/Curriculum.pdf" target="_blank">
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
                     fill="#fafafa"

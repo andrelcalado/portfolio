@@ -142,10 +142,13 @@ export const TopPolygon = styled.div`
 
 export const SkillsSectionWrapper = styled.div`
   background-color: ${theme.colors.white};
+  justify-content: center;
+  flex-direction: column;
   position: relative;
   z-index: 3;
   padding: 50px 0;
   min-height: 100vh;
+  display: flex;
 
   & h2 {
     opacity: 0;
