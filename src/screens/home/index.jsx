@@ -55,13 +55,13 @@ export default function HomeScreen() {
     // Hero Stacks Animation
     gsap.to(stacksMovimentRef, {
       keyframes: [
-        { y: 0, delay: 2, ease: "back.out(2)" },
+        // { y: 0, delay: 2, ease: "back.out(2)" },
         { y: -70, delay: 2, ease: "back.out(2)" },
         { y: -130, delay: 2, ease: "back.out(2)" },
         { y: -190, delay: 2, ease: "back.out(2)" },
       ],
       repeat: -1,
-      repeatDelay: 2,
+      repeatDelay: 1,
       yoyo: true,
     });
 
@@ -186,7 +186,7 @@ export default function HomeScreen() {
           </Container>
         </HeroSection>
 
-        <SkillsSection id="skills" data-js="section">
+        {/* <SkillsSection id="skills" data-js="section">
           <TopPolygon>
             <svg
               x="0"
@@ -492,7 +492,7 @@ export default function HomeScreen() {
               </ContactSymbolAnimated>
             </ContactFooterContainer>
           </Container>
-        </ContactSection>
+        </ContactSection> */}
       </Main>
     </>
   );

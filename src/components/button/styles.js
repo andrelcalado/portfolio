@@ -15,6 +15,10 @@ export const ButtonComponent = styled(Link)`
   display: flex;
   gap: 6px;
 
+  @media (max-width: 910px) {
+    padding: 9px 17px;
+  }
+
   & svg {
     width: 15px;
   }

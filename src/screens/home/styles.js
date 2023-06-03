@@ -2,13 +2,17 @@ import styled from "styled-components";
 import { theme } from "../../theme/globalStyles";
 import Image from "next/image";
 import {
+  displayLgBold,
   displayMdBold,
   displaySmBold,
   displayX1Bold,
+  displayXsBold,
   displayXsRegular,
+  textLgRegular,
   textSmMedium,
   textSmRegular,
   textX1Bold,
+  textX1Regular,
   textXsRegular,
 } from "../../theme/typography";
 import {
@@ -49,6 +53,15 @@ export const HeroImgBG = styled(Image)`
   transform: translate(100px, 150px);
   pointer-events: none;
   opacity: 0;
+
+  @media (max-width: 910px) {
+    left: -70px !important;
+    object-fit: cover;
+  }
+
+  @media (max-width: 670px) {
+    display: none;
+  }
 `;
 
 export const HeroTexts = styled.div`
@@ -69,6 +82,22 @@ export const HeroTexts = styled.div`
   & > h1 {
     ${displayX1Bold}
   }
+
+  @media (max-width: 910px) {
+    & > h2 {
+      ${textX1Regular}
+    }
+
+    & > h1 {
+      ${displayLgBold}
+    }
+  }
+
+  @media (max-width: 470px) {
+    & > h2 {
+      ${textLgRegular}
+    }
+  }
 `;
 
 export const StacksContainer = styled.div`
@@ -78,6 +107,14 @@ export const StacksContainer = styled.div`
   opacity: 0;
   position: relative;
   top: 40px;
+
+  @media (max-width: 910px) {
+    margin-bottom: 10px;
+  }
+
+  @media (max-width: 470px) {
+    height: 40px;
+  }
 `;
 
 export const StacksMoviment = styled.div`
@@ -87,6 +124,19 @@ export const StacksMoviment = styled.div`
     ${displayMdBold}
     color: ${theme.colors.green.light};
     margin-bottom: 20px;
+
+    &:first-of-type {
+      transform: translate(0, -10px);
+    }
+
+    @media (max-width: 910px) {
+      ${displaySmBold}
+    }
+
+    @media (max-width: 470px) {
+      ${displayXsBold}
+      margin-bottom: 28px;
+    }
   }
 `;
 
