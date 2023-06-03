@@ -11,7 +11,7 @@ import "swiper/css/navigation";
 import "swiper/css/pagination";
 import Image from "next/image";
 
-export default function ProjectsSlide() {
+export default function ProjectsSlide({ videoModal, setVideoModal }) {
   return (
     <ProjectsSwiper
       slidesPerView={3}
@@ -59,7 +59,13 @@ export default function ProjectsSlide() {
 
         <ProjectInfos className="projectInfos">
           <ProjectCTAContainer className="projectCTAContainer">
-            <ProjectCTA target="_blank" href="#">
+            <ProjectCTA
+              href="#"
+              onClick={(e) => {
+                e.preventDefault();
+                setVideoModal(!videoModal);
+              }}
+            >
               <Image fill src="/assets/icons/youtube.svg" alt="youtube Icon" />
             </ProjectCTA>
           </ProjectCTAContainer>

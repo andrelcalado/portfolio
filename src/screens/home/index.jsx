@@ -1,4 +1,4 @@
-import React, { useRef, useEffect } from "react";
+import React, { useRef, useEffect, useState } from "react";
 import { Container, theme } from "../../theme/globalStyles";
 import {
   HeroSection,
@@ -44,10 +44,12 @@ import Image from "next/image";
 import ContactCard from "../../components/contactCard";
 import "swiper/css";
 import Preloading from "../../components/preloading";
+import ModalVideo from "../../components/modalVideo";
 gsap.registerPlugin(ScrollTrigger);
 
 export default function HomeScreen() {
   let stacksMovimentRef = useRef();
+  const [videoModal, setVideoModal] = useState(false);
 
   useEffect(() => {
     // Hero Stacks Animation
@@ -371,6 +373,12 @@ export default function HomeScreen() {
         </SkillsSection>
 
         <ProjectsSection id="projects" data-js="section">
+          <ModalVideo
+            video="loadout"
+            active={videoModal}
+            setActive={setVideoModal}
+          />
+
           <h2 className="projectsTitle">Projects</h2>
           <p className="projectsDesc">
             Some of the bests projects that i developed alone as front end
@@ -378,7 +386,10 @@ export default function HomeScreen() {
           </p>
 
           <ProjectsSlideContainer className="projectsSlide">
-            <ProjectsSlide />
+            <ProjectsSlide
+              videoModal={videoModal}
+              setVideoModal={setVideoModal}
+            />
           </ProjectsSlideContainer>
 
           <ProjectsPlaceholderContainer>
