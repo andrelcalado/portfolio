@@ -8,6 +8,7 @@ import {
   displayX1Bold,
   displayXsBold,
   displayXsRegular,
+  textLgBold,
   textLgRegular,
   textSmMedium,
   textSmRegular,
@@ -200,6 +201,10 @@ export const SkillsSectionWrapper = styled.div`
   min-height: 100vh;
   display: flex;
 
+  @media (max-width: 806px) {
+    padding: 50px 0 100px;
+  }
+
   & h2 {
     opacity: 0;
     top: 40px;
@@ -213,6 +218,10 @@ export const SkillsSectionWrapper = styled.div`
     position: relative;
     width: fit-content;
 
+    @media (max-width: 806px) {
+      margin: 0 auto 40px;
+    }
+    
     &::after {
       content: "";
       position: absolute;
@@ -249,6 +258,10 @@ export const SkillsCardsContainer = styled.div`
   position: relative;
   top: 40px;
   opacity: 0;
+
+  @media (max-width: 806px) {
+    grid-template-columns: repeat(2, 1fr);
+  }
 `;
 
 export const SkillCard = styled.div`
@@ -265,6 +278,11 @@ export const SkillCard = styled.div`
   opacity: 0.5;
   transition: 0.4s cubic-bezier(0.47, 1.64, 0.41, 0.8);
   filter: blur(0.7px);
+
+  @media (max-width: 561px) {
+    padding: 15px 10px;
+    gap: 10px;
+  }
 
   &:hover {
     opacity: 1;
@@ -283,12 +301,22 @@ export const SkillTexts = styled.div`
   & h4 {
     ${textX1Bold}
     color: ${theme.colors.gray[400]};
+
+    @media (max-width: 561px) {
+      ${textLgBold}
+      line-height: 19px;
+      margin-bottom: 5px;
+    }
   }
 `;
 
 export const SkillLogo = styled.figure`
   width: 50px;
   height: 100%;
+
+  @media (max-width: 561px) {
+    width: 40px;
+  }
 
   & svg,
   & img {
@@ -306,6 +334,10 @@ export const SkillsFooterContainer = styled.div`
   display: flex;
   align-items: center;
   gap: 10px;
+
+  @media (max-width: 806px) {
+    margin: 70px auto 0;
+  }
 
   &::before,
   &::after {
@@ -417,35 +449,7 @@ export const ProjectsSlideContainer = styled.div`
   top: 40px;
   opacity: 0;
 
-  &::after,
-  &::before {
-    content: "";
-    position: absolute;
-    top: -20px;
-    height: 115%;
-    width: 350px;
-    z-index: 5;
-    pointer-events: none;
-  }
-
-  &::before {
-    left: 0;
-    background: linear-gradient(
-      90deg,
-      ${theme.colors.blue.darkLight} 20%,
-      rgba(1, 21, 28, 0) 80%
-    );
-  }
-
-  &::after {
-    width: 450px;
-    right: 0;
-    background: linear-gradient(
-      -90deg,
-      ${theme.colors.blue.darkLight} 5%,
-      rgba(1, 21, 28, 0) 40%
-    );
-  }
+  
 `;
 
 export const ProjectsPlaceholderContainer = styled.div`

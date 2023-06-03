@@ -11,3 +11,9 @@ export const goToSection = (secId) => {
       : null;
   });
 };
+
+export const toggleHtmlScroll = () => {
+  const htmlDOM = document.querySelector("html");
+
+  htmlDOM.classList.toggle("hideScroll");
+};

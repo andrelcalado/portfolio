@@ -32,16 +32,24 @@ export const HeaderContainer = styled.header`
 `;
 
 export const LogoContainer = styled.figure`
-  opacity: 0;
-  top: -40px;
-  position: relative;
-  width: ${({ scrolled }) => (scrolled ? "30px" : "60px")};
-  transition: 0.5s ease-out;
+  ${({ active, scrolled }) => css`
+    opacity: 0;
+    top: -40px;
+    position: relative;
+    width: ${scrolled ? "30px" : "60px"};
+    transition: 0.5s ease-out;
+    z-index: 9999999;
 
-  & svg {
-    width: 100%;
-    object-fit: contain;
-  }
+    & svg {
+      width: 100%;
+      object-fit: contain;
+    }
+
+    @media (max-width: 670px) {
+      width: 30px;
+      transition: 1s cubic-bezier(0.69, -0.01, 0.24, 1);
+    }
+  `}
 `;
 
 export const HeaderWrapper = styled.div`
@@ -51,17 +59,46 @@ export const HeaderWrapper = styled.div`
   width: 100%;
   padding: ${({ scrolled }) => (scrolled ? "20px 0 " : "30px 0")};
   transition: 0.5s ease-out;
+
+  @media (max-width: 670px) {
+    padding: 15px 0;
+  }
 `;
 
 export const NavContainer = styled.nav`
-  margin-top: ${({ scrolled }) => (scrolled ? "0" : "-50px")};
-  transition: 0.5s ease-out;
+  ${({ active, scrolled }) => css`
+    margin-top: ${scrolled ? "0" : "-50px"};
+    transition: 0.5s ease-out;
 
-  & ul {
-    display: flex;
-    gap: 30px;
-    align-items: center;
-  }
+    @media (max-width: 670px) {
+      top: 0;
+      left: 0;
+      position: fixed;
+      background-color: ${theme.colors.blue.darkLight};
+      transition: 1s cubic-bezier(0.69, -0.01, 0.24, 1);
+      pointer-events: ${active ? "all" : "none"};
+      width: ${active ? "100vw" : 0};
+      height: 100vh;
+      z-index: 999999;
+      overflow: hidden;
+      ${active ? "margin: 0;" : ""}
+    }
+
+    & ul {
+      position: relative;
+      transition: 1s cubic-bezier(0.69, -0.01, 0.24, 1);
+      align-items: center;
+      display: flex;
+      gap: 30px;
+
+      @media (max-width: 670px) {
+        right: ${active ? 0 : "-100vw"};
+        flex-direction: column;
+        padding: 100px 20px 0;
+        gap: 0;
+      }
+    }
+  `}
 `;
 
 export const NavLinkItem = styled.li`
@@ -72,6 +109,18 @@ export const NavLinkItem = styled.li`
     ${textMdRegular}
     color: ${theme.colors.white};
     cursor: pointer;
+
+    @media (max-width: 670px) {
+      width: 100%;
+      padding-bottom: 20px;
+      margin-bottom: 20px;
+      border-bottom: 1px solid ${theme.colors.gray[400]};
+
+      &:first-of-type {
+        padding-top: 20px;
+        border-top: 1px solid ${theme.colors.gray[400]};
+      }
+    }
 
     & a {
       display: flex;
@@ -92,5 +141,47 @@ export const NavLinkItem = styled.li`
       fill: ${theme.colors.green.light};
     }
     ${active ? "" : "}"}
+  `}
+`;
+
+export const HambButton = styled.button`
+  ${({ active }) => css`
+    width: 22px;
+    display: none;
+    height: ${active ? 0 : "2px"};
+    background-color: ${theme.colors.white};
+    transition: 0.5s ease;
+    position: relative;
+    z-index: 9999999;
+    border: none;
+
+    &::after,
+    &::before {
+      content: "";
+      width: 22px;
+      height: 2px;
+      right: 0;
+      background-color: ${theme.colors.white};
+      border-radius: 5.8rem;
+      position: absolute;
+    }
+
+    &::before {
+      top: -8px;
+      animation: ${active
+        ? "firstLineIn 0.4s forwards, firstCrossIn 0.4s 0.4s forwards"
+        : "firstCrossOut 1s forwards"};
+    }
+
+    &::after {
+      top: 8px;
+      animation: ${active
+        ? "secondLineIn 0.4s forwards, secondCrossIn 0.4s 0.4s forwards"
+        : "secondCrossOut 1s forwards"};
+    }
+
+    @media (max-width: 670px) {
+      display: block;
+    }
   `}
 `;

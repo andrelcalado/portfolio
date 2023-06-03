@@ -186,7 +186,7 @@ export default function HomeScreen() {
           </Container>
         </HeroSection>
 
-        {/* <SkillsSection id="skills" data-js="section">
+        <SkillsSection id="skills" data-js="section">
           <TopPolygon>
             <svg
               x="0"
@@ -492,7 +492,7 @@ export default function HomeScreen() {
               </ContactSymbolAnimated>
             </ContactFooterContainer>
           </Container>
-        </ContactSection> */}
+        </ContactSection>
       </Main>
     </>
   );

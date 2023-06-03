@@ -4,8 +4,37 @@ import { theme } from "../../theme/globalStyles";
 
 export const ProjectsSwiper = styled(Swiper)`
   position: relative;
-  max-width: 1400px;
-  overflow: unset !important;
+  max-width: 100vw;
+  padding: 0 60px;
+
+  &::after,
+  &::before {
+    content: "";
+    position: absolute;
+    top: -20px;
+    height: 115%;
+    width: 270px;
+    z-index: 5;
+    pointer-events: none;
+  }
+
+  &::before {
+    left: 0;
+    background: linear-gradient(
+      90deg,
+      ${theme.colors.blue.darkLight} 20%,
+      rgba(1, 21, 28, 0) 80%
+    );
+  }
+
+  &::after {
+    right: 0;
+    background: linear-gradient(
+      -90deg,
+      ${theme.colors.blue.darkLight} 5%,
+      rgba(1, 21, 28, 0) 40%
+    );
+  }
 
   & .swiper-pagination {
     bottom: -40px;
@@ -37,11 +66,11 @@ export const ProjectsSwiper = styled(Swiper)`
   }
 
   & .swiper-button-prev {
-    left: -10px;
+    left: 30px;
   }
 
   & .swiper-button-next {
-    right: -10px;
+    right: 30px;
   }
 
   & .swiper-pagination-bullet {
@@ -59,6 +88,6 @@ export const ProjectsSwiper = styled(Swiper)`
   }
 
   & .swiper-slide {
-    box-shadow: 0 0 15px rgba(60,255,209,.3);
+    box-shadow: 0 0 15px rgba(60, 255, 209, 0.3);
   }
 `;

@@ -7,11 +7,13 @@ import {
   LogoContainer,
   NavContainer,
   NavLinkItem,
+  HambButton,
 } from "./styles";
-import { goToSection } from "../../utils/actions";
+import { goToSection, toggleHtmlScroll } from "../../utils/actions";
 
 export default function Header() {
   const [scrolled, setScrolled] = useState(false);
+  const [menuMobile, setMenuMobile] = useState(false);
   const [activeSection, setActiveSection] = useState();
   const sections = useRef([]);
 
@@ -22,9 +24,7 @@ export default function Header() {
     sections.current.forEach((section) => {
       const sectionOffsetTop = section.offsetTop;
 
-      if (
-        pageYOffset >= sectionOffsetTop / 1.1
-      ) {
+      if (pageYOffset >= sectionOffsetTop / 1.1) {
         newActiveSection = section.id;
       }
     });
@@ -44,15 +44,15 @@ export default function Header() {
     };
   }, []);
 
-  useEffect(() => {
-    console.log(activeSection);
-  }, [activeSection]);
-
   return (
     <HeaderContainer scrolled={scrolled}>
       <Container>
         <HeaderWrapper scrolled={scrolled}>
-          <LogoContainer className="logoFigure" scrolled={scrolled}>
+          <LogoContainer
+            className="logoFigure"
+            active={menuMobile}
+            scrolled={scrolled}
+          >
             <svg
               id="Layer_1"
               x="0"
@@ -65,7 +65,15 @@ export default function Header() {
             </svg>
           </LogoContainer>
 
-          <NavContainer scrolled={scrolled}>
+          <HambButton
+            active={menuMobile}
+            onClick={() => {
+              toggleHtmlScroll();
+              setMenuMobile(!menuMobile);
+            }}
+          />
+
+          <NavContainer active={menuMobile} scrolled={scrolled}>
             <ul>
               <NavLinkItem
                 active={activeSection === "skills"}
