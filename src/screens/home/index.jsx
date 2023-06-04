@@ -148,12 +148,12 @@ export default function HomeScreen() {
 
           <Container>
             <HeroTexts>
-              <h2 className="heroText1">Hi, i'm</h2>
+              <h2 className="heroText1">Hi, i&apos;m</h2>
               <h1 className="heroText2">André Luis</h1>
 
               <StacksContainer className="heroText3">
                 <StacksMoviment ref={(el) => (stacksMovimentRef = el)}>
-                  <h3>I'm Front End Developer</h3>
+                  <h3>I&apos;m Front End Developer</h3>
                   <h3>I build responsive websites</h3>
                   <h3>I build mobile apps</h3>
                   <h3>I develop complex platforms</h3>
