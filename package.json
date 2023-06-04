@@ -28,6 +28,9 @@
   "devDependencies": {
     "@types/react-vertical-timeline-component": "^3.3.3",
     "@types/styled-components": "^5.1.26"
+  },
+  "resolutions": {
+    "styled-components": "^5"
   }
   
 }
