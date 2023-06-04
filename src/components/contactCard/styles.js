@@ -14,8 +14,20 @@ export const CardWithLogo = styled.picture`
   cursor: pointer;
   z-index: 5;
 
+  @media (max-width: 610px) {
+    width: 100%;
+    height: 70px;
+    display: flex;
+    padding: 10px 20px 10px;
+    justify-content: flex-end;
+  }
+
   & img {
     position: relative !important;
+
+    @media (max-width: 610px) {
+      width: fit-content !important;
+    }
   }
 `;
 
@@ -105,6 +117,36 @@ export const ContactCardField = styled.a`
       & p {
         top: 0;
       }
+    }
+  }
+
+  @media (max-width: 1024px) {
+    transform: translate(5px, -45px) !important;
+
+    & .borderBG {
+      top: 50%;
+      left: 50%;
+      transform: translate(-58%, -40%) skewY(-3deg);
+    }
+
+    & .cardTextsContainer {
+      max-width: 100%;
+
+      & span {
+        left: 0;
+      }
+
+      & p {
+        top: 0;
+      }
+    }
+  }
+
+  @media (max-width: 610px) {
+    & .borderBG {
+      width: 100%;
+      height: 70px;
+      transform: translate(-55%, -30%) skewY(-3deg);
     }
   }
 `;

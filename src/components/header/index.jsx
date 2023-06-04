@@ -78,6 +78,7 @@ export default function Header() {
               <NavLinkItem
                 active={activeSection === "skills"}
                 className="navItem1"
+                onClick={() => setMenuMobile(false)}
               >
                 <Link
                   href="skills"
@@ -99,6 +100,7 @@ export default function Header() {
               <NavLinkItem
                 active={activeSection === "projects"}
                 className="navItem2"
+                onClick={() => setMenuMobile(false)}
               >
                 <Link
                   href="projects"
@@ -121,6 +123,7 @@ export default function Header() {
               <NavLinkItem
                 active={activeSection === "timeline"}
                 className="navItem3"
+                onClick={() => setMenuMobile(false)}
               >
                 <Link
                   href="timeline"
@@ -143,6 +146,7 @@ export default function Header() {
               <NavLinkItem
                 active={activeSection === "contact"}
                 className="navItem4"
+                onClick={() => setMenuMobile(false)}
               >
                 <Link
                   href="#contact"
@@ -162,7 +166,10 @@ export default function Header() {
                   <span>Contact</span>
                 </Link>
               </NavLinkItem>
-              <NavLinkItem className="navItem5">
+              <NavLinkItem
+                className="navItem5"
+                onClick={() => setMenuMobile(false)}
+              >
                 <Link href="/assets/downloads/Curriculum.pdf" target="_blank">
                   <svg
                     xmlns="http://www.w3.org/2000/svg"

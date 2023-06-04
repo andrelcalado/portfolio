@@ -835,7 +835,15 @@ export const BGVideo = styled.video`
 export const ContactCardsContainer = styled.div`
   display: flex;
   justify-content: center;
+  flex-wrap: wrap;
   gap: 30px;
+
+  @media (max-width: 610px) {
+    display: grid;
+    flex-wrap: unset;
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
 `;
 
 export const ContactSymbolAnimated = styled(SkillsSymbolAnimated)`
