@@ -221,7 +221,7 @@ export const SkillsSectionWrapper = styled.div`
     @media (max-width: 806px) {
       margin: 0 auto 40px;
     }
-    
+
     &::after {
       content: "";
       position: absolute;
@@ -464,8 +464,6 @@ export const ProjectsSlideContainer = styled.div`
   position: relative;
   top: 40px;
   opacity: 0;
-
-  
 `;
 
 export const ProjectsPlaceholderContainer = styled.div`
@@ -481,7 +479,7 @@ export const ProjectsPlaceholderContainer = styled.div`
 
   @media (max-width: 584px) {
     flex-direction: column;
-    gap: 10px
+    gap: 10px;
   }
 `;
 
@@ -491,6 +489,14 @@ export const TimeLineSection = styled.section`
   margin-top: 60px;
   padding: 120px 0 70px;
   position: relative;
+
+  @media (max-width: 580px) {
+    padding: 120px 40px 70px;
+  }
+
+  @media (max-width: 500px) {
+    padding: 120px 20px 100px;
+  }
 
   &::before {
     content: "";
@@ -567,6 +573,17 @@ export const TimeLineSection = styled.section`
 export const TimelineComponent = styled(VerticalTimeline)`
   z-index: 5;
 
+  @media (max-width: 1170px) {
+    max-width: 500px;
+  }
+
+  @media (max-width: 570px) {
+    max-width: unset;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+  }
+
   &::before {
     width: 2px;
     background: linear-gradient(
@@ -575,6 +592,16 @@ export const TimelineComponent = styled(VerticalTimeline)`
       rgba(60, 255, 209, 1) 100%
     );
     height: 95%;
+
+    @media (max-width: 1170px) {
+      left: 35px;
+      top: 40px;
+      height: 90%;
+    }
+
+    @media (max-width: 570px) {
+      left: 29px;
+    }
   }
 `;
 
@@ -587,6 +614,11 @@ export const TimelineItem = styled(VerticalTimelineElement)`
     text-align: right;
     max-width: 410px;
     margin: 0 0 0 auto;
+
+    @media (max-width: 1170px) {
+      text-align: left;
+      margin: 0;
+    }
   }
 
   & p {
@@ -597,6 +629,10 @@ export const TimelineItem = styled(VerticalTimelineElement)`
   & h3 {
     ${textX1Bold}
     color: ${theme.colors.white};
+
+    @media (max-width: 570px) {
+      ${textLgBold}
+    }
   }
 
   & h4 {
@@ -611,12 +647,25 @@ export const TimelineItem = styled(VerticalTimelineElement)`
       height: 1px;
       background-color: ${theme.colors.green.light};
       margin: 10px 0 0 auto;
+
+      @media (max-width: 1170px) {
+        margin: 10px 0 0;
+      }
     }
   }
 
   & .vertical-timeline-element-content {
     background: transparent;
     box-shadow: none;
+
+    @media (max-width: 1170px) {
+      margin-left: 110px;
+    }
+
+    @media (max-width: 570px) {
+      margin-left: 90px;
+      padding-right: 0;
+    }
   }
 
   & .vertical-timeline-element-content-arrow {
@@ -627,6 +676,10 @@ export const TimelineItem = styled(VerticalTimelineElement)`
     border-right: 2px solid ${theme.colors.green.light};
     border-top: 2px solid ${theme.colors.green.light};
     transform: rotate(45deg);
+
+    @media (max-width: 1170px) {
+      transform: rotate(-135deg);
+    }
   }
 
   &:nth-of-type(2n) {
@@ -657,6 +710,16 @@ export const TimelineItem = styled(VerticalTimelineElement)`
     height: 70px;
     overflow: hidden;
     margin-left: -36px;
+
+    @media (max-width: 1170px) {
+      margin-left: 0;
+    }
+
+    @media (max-width: 570px) {
+      width: 60px;
+      height: 60px;
+      top: 5px;
+    }
   }
 
   & .vertical-timeline-element-date {
@@ -674,6 +737,10 @@ export const ALCodeBorderSymbol = styled.figure`
   transform: translate(0, -50%);
   left: -300px;
   z-index: 20;
+
+  @media (max-width: 900px) {
+    display: none;
+  }
 
   & svg {
     width: 100%;
