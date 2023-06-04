@@ -9,14 +9,7 @@ export default function Home() {
     <>
       <Head>
         <title>AL code.</title>
-        <meta
-          name="description"
-          content="Front End Developer - Web | React.js | React Native"
-        />
-        <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <link rel="icon" href="/favicon.ico" />
       </Head>
-
       <Header />
 
       <HomeScreen />

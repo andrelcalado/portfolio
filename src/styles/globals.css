@@ -3,6 +3,7 @@
   padding: 0;
   margin: 0;
   transition: 0.4s cubic-bezier(.47,1.64,.41,.8);
+  font-family: 'Inter';
 }
 
 html,
