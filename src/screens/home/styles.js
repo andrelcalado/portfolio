@@ -371,6 +371,14 @@ export const ProjectsSection = styled.section`
   justify-content: center;
   display: flex;
 
+  @media (max-width: 830px) {
+    padding: 120px 40px 70px;
+  }
+
+  @media (max-width: 500px) {
+    padding: 100px 20px 70px;
+  }
+
   &::after {
     content: "";
     width: 400px;
@@ -403,6 +411,10 @@ export const ProjectsSection = styled.section`
     position: relative;
     width: fit-content;
     z-index: 5;
+
+    @media (max-width: 500px) {
+      margin: 0 auto 10px;
+    }
 
     &::after {
       content: "";
@@ -440,6 +452,10 @@ export const ProjectsSection = styled.section`
     color: ${theme.colors.gray[200]};
     position: relative;
     z-index: 5;
+
+    @media (max-width: 500px) {
+      ${textXsRegular}
+    }
   }
 `;
 
@@ -457,7 +473,16 @@ export const ProjectsPlaceholderContainer = styled.div`
   gap: 30px;
   justify-content: center;
   box-shadow: 0 0 20px rgba(0, 0, 0, 0.05);
-  margin-top: 80px;
+  margin-top: 60px;
+
+  @media (max-width: 830px) {
+    margin-top: 20px;
+  }
+
+  @media (max-width: 584px) {
+    flex-direction: column;
+    gap: 10px
+  }
 `;
 
 // Timeline section

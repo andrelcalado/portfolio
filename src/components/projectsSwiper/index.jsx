@@ -18,8 +18,20 @@ export default function ProjectsSlide({ videoModal, setVideoModal }) {
       spaceBetween={20}
       modules={[Navigation, Pagination, Autoplay]}
       navigation
-      pagination={{ clickable: true }}
       autoplay={{ delay: 5000 }}
+      breakpoints={{
+        0: {
+          slidesPerView: 1,
+          width: 335
+        },
+        414: {
+          width: 375,
+          slidesPerView: 1
+        },
+        830: {
+          slidesPerView: 3,
+        },
+      }}
       loop
     >
       <ProjectSlide>

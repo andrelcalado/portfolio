@@ -9,12 +9,15 @@ export const ProjectPlaceholderCard = styled.div`
   padding: 15px;
   width: 280px;
   height: fit-content;
-  /* border: .1px solid ${theme.colors.green.light}; */
   display: flex;
   gap: 20px;
   overflow: hidden;
   opacity: 1;
   z-index: 5;
+
+  @media (max-width: 584px) {
+    width: 100%;
+  }
 
   & img {
     z-index: 1;

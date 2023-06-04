@@ -6,7 +6,7 @@ import { textMdBold } from "../../theme/typography";
 import styled from "styled-components";
 
 export const ProjectSlide = styled(SwiperSlide)`
-  width: 448px;
+  min-width: 448px;
   height: 255px;
   position: relative;
   cursor: pointer;
@@ -14,6 +14,11 @@ export const ProjectSlide = styled(SwiperSlide)`
   border: 2px solid ${theme.colors.white};
   background-color: ${theme.colors.blue.darkLight};
   overflow: hidden;
+
+  @media (max-width: 830px) {
+    height: 215px;
+    min-width: unset;
+  }
 
   &:hover {
     border: 2px solid ${theme.colors.green.light};
@@ -36,6 +41,8 @@ export const ProjectSlide = styled(SwiperSlide)`
       top: 0;
     }
   }
+
+
 `;
 
 export const ProjectFigure = styled(Image)`

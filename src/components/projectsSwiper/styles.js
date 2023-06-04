@@ -7,6 +7,15 @@ export const ProjectsSwiper = styled(Swiper)`
   max-width: 100vw;
   padding: 0 60px;
 
+  @media (max-width: 830px) {
+    max-width: 375px;
+    padding: 0 0 60px;
+  }
+
+  @media (max-width: 414px) {
+    max-width: calc(375px - 40px);
+  }
+
   &::after,
   &::before {
     content: "";
@@ -16,6 +25,10 @@ export const ProjectsSwiper = styled(Swiper)`
     width: 270px;
     z-index: 5;
     pointer-events: none;
+
+    @media (max-width: 830px) {
+      content: none;
+    }
   }
 
   &::before {
@@ -25,6 +38,10 @@ export const ProjectsSwiper = styled(Swiper)`
       ${theme.colors.blue.darkLight} 20%,
       rgba(1, 21, 28, 0) 80%
     );
+
+    @media (max-width: 830px) {
+      left: 150px;
+    }
   }
 
   &::after {
@@ -34,6 +51,10 @@ export const ProjectsSwiper = styled(Swiper)`
       ${theme.colors.blue.darkLight} 5%,
       rgba(1, 21, 28, 0) 40%
     );
+
+    @media (max-width: 830px) {
+      right: 150px;
+    }
   }
 
   & .swiper-pagination {
@@ -56,21 +77,34 @@ export const ProjectsSwiper = styled(Swiper)`
     }
   }
 
-  & .swiper-button-prev,
-  & .swiper-button-next {
-    transition: 0.4s cubic-bezier(0.47, 1.64, 0.41, 0.8);
-
-    &:hover {
-      transform: scale(1.25);
-    }
-  }
-
   & .swiper-button-prev {
     left: 30px;
+
+    @media (max-width: 830px) {
+      left: 100px;
+    }
   }
 
   & .swiper-button-next {
     right: 30px;
+
+    @media (max-width: 830px) {
+      right: 100px;
+    }
+  }
+
+  & .swiper-button-prev,
+  & .swiper-button-next {
+    transition: 0.4s cubic-bezier(0.47, 1.64, 0.41, 0.8);
+
+    @media (max-width: 830px) {
+      top: unset;
+      bottom: 0;
+    }
+
+    &:hover {
+      transform: scale(1.25);
+    }
   }
 
   & .swiper-pagination-bullet {
