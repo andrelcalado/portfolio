@@ -14,7 +14,7 @@ export const timelineProjects = [
     desc: "Idealization, recording and, mainly, edition of calls and viral videos. In addition a digital pieces conception",
   },
   {
-    title: "PJ - Front-end Developer",
+    title: "Contract - Front-end Developer",
     business: "WCF Tecnologia da Informação LTDA",
     logo: "wcf",
     period: "Sep 2021 - Apr 2022",
@@ -28,7 +28,7 @@ export const timelineProjects = [
     desc: "Creating new components, solving bugs and upgrading Front-end in the Traffic Accidents Dashboard called VIDA using the technologies React.js and React Native.",
   },
   {
-    title: "PJ - Full-Stack Developer",
+    title: "Contract - Full-Stack Developer",
     business: "Exit",
     logo: "exit",
     period: "Apr 2022 - Oct 2022",
