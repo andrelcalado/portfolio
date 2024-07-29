@@ -142,7 +142,7 @@ export default function HomeScreen() {
         <BackToTop />
 
         <HeroSection>
-          <HeroImgBG className="heroImgBG" fill src="/assets/images/hero.png" />
+          <HeroImgBG className="heroImgBG" fill src="/assets/images/hero.png" alt="" />
 
           <ScrollDrop className="scrollDown" />
 
