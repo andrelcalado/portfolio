@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { theme } from "../../theme/globalStyles";
+import { Container, theme } from "../../theme/globalStyles";
 import Image from "next/image";
 import {
   displayLgBold,
@@ -10,6 +10,7 @@ import {
   displayXsRegular,
   textLgBold,
   textLgRegular,
+  textMdRegular,
   textSmMedium,
   textSmRegular,
   textX1Bold,
@@ -46,6 +47,62 @@ export const HeroSection = styled.section`
     );
     position: absolute;
     filter: blur(200px);
+    z-index: 3;
+  }
+
+  &::before {
+    @media (max-width: 900px) {
+      content: "";
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(360deg, ${theme.colors.blue.darkLight} 40%, transparent 100%);
+      bottom: -95px;
+      left: 0;
+      z-index: 2;
+    }
+  }
+
+  ${Container} {
+    position: relative;  
+  }
+`;
+
+export const HeroImgContainer = styled.div`
+  position: absolute;
+  top: 50%;
+  right: 0;
+  width: 750px;
+  height: 735px;
+  max-width: 800px;
+  transform: translateY(-50%);
+  max-height: 100vh;
+`;
+
+export const ChatBalloon = styled.span`
+  position: absolute;
+  top: 14%;
+  right: 2%;
+  background-color: ${theme.colors.white};
+  border-radius: 15px;
+  padding: 10px 18px;
+  position: absolute;
+  color: ${theme.colors.blue.darkLight};
+  box-shadow: -5px 10px 25px 0px rgba(0, 0, 0, 0.4);
+  animation: chatMovement 4s infinite ease-in-out;
+  ${textMdRegular}
+  z-index: 5;
+
+  &::after {
+    content: "";
+    position: absolute;
+    bottom: -28px;
+    left: 10px;
+    width: 30px;
+    height: 30px;
+    background: url('data:image/svg+xml,<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 431.6 269.1" style="enable-background:new 0 0 431.6 269.1;" xml:space="preserve"><style type="text/css">.st0{fill:%23FAFAFA;}</style><path class="st0" d="M0,0c84.6,0,172.7,0,279.3,0c0,144.7,152.3,269.1,152.3,269.1S104.1,256.4,0,0z"/></svg>') no-repeat;
+    background-size: contain;
+    transform: scaleX(-1);
   }
 `;
 
@@ -54,11 +111,6 @@ export const HeroImgBG = styled(Image)`
   transform: translate(100px, 150px);
   pointer-events: none;
   opacity: 0;
-
-  @media (max-width: 910px) {
-    left: -70px !important;
-    object-fit: cover;
-  }
 
   @media (max-width: 670px) {
     display: none;
@@ -69,33 +121,33 @@ export const HeroTexts = styled.div`
   position: relative;
   z-index: 5;
 
-  & > h2,
-  & > h1 {
+  > h2,
+  > h1 {
     position: relative;
     top: 40px;
     opacity: 0;
   }
 
-  & > h2 {
+  > h2 {
     ${displayXsRegular}
   }
 
-  & > h1 {
+  > h1 {
     ${displayX1Bold}
   }
 
-  @media (max-width: 910px) {
-    & > h2 {
+  @media (max-width: 1030px) {
+    > h2 {
       ${textX1Regular}
     }
 
-    & > h1 {
+    > h1 {
       ${displayLgBold}
     }
   }
 
   @media (max-width: 470px) {
-    & > h2 {
+    > h2 {
       ${textLgRegular}
     }
   }
@@ -109,7 +161,7 @@ export const StacksContainer = styled.div`
   position: relative;
   top: 40px;
 
-  @media (max-width: 910px) {
+  @media (max-width: 1030px) {
     margin-bottom: 10px;
   }
 
@@ -130,7 +182,7 @@ export const StacksMoviment = styled.div`
       transform: translate(0, -10px);
     }
 
-    @media (max-width: 910px) {
+    @media (max-width: 1030px) {
       ${displaySmBold}
     }
 
@@ -183,6 +235,9 @@ export const TopPolygon = styled.div`
   width: 100%;
   height: 75px;
   filter: drop-shadow(-407px -20px 51px #000);
+  margin-bottom: -1px;
+  position: relative;
+  z-index: 4;
 
   & svg {
     object-fit: cover;
@@ -196,7 +251,7 @@ export const SkillsSectionWrapper = styled.div`
   justify-content: center;
   flex-direction: column;
   position: relative;
-  z-index: 3;
+  z-index: 5;
   padding: 50px 0;
   min-height: 100vh;
   display: flex;
