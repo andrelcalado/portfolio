@@ -61,6 +61,13 @@ export default function Preloading() {
         y: 40,
         duration: 1,
         delay: -1,
+        height: 'auto'
+      })
+      .to(".chatBalloon", {
+        opacity: 1,
+        top: '14%',
+        duration: 1,
+        delay: -.5,
       })
       .to(".heroText1", {
         opacity: 1,

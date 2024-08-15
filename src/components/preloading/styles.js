@@ -2,8 +2,8 @@ import styled from "styled-components";
 import { theme } from "../../theme/globalStyles";
 
 export const PreloadingScreen = styled.div`
-  height: 100vh;
-  width: 100vw;
+  height: 100svh;
+  width: 100svw;
   overflow: hidden;
   display: flex;
   justify-content: center;

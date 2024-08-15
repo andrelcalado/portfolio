@@ -199,7 +199,7 @@ export default function HomeScreen() {
             </HeroTexts>
 
             <HeroImgContainer>
-              <ChatBalloon>
+              <ChatBalloon className="chatBalloon">
                 Motorcycle lifestyle ✊❤️
               </ChatBalloon>
               <HeroImgBG className="heroImgBG" fill src="/assets/images/hero.png" />

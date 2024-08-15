@@ -24,13 +24,15 @@ import {
 
 export const Main = styled.main`
   color: ${theme.colors.white};
+  position: relative;
   height: 100%;
+  z-index: 1;
 `;
 
 export const HeroSection = styled.section`
   position: relative;
   width: 100%;
-  min-height: 100vh;
+  min-height: 100svh;
   display: flex;
   align-items: center;
 
@@ -60,6 +62,7 @@ export const HeroSection = styled.section`
       bottom: -95px;
       left: 0;
       z-index: 2;
+      pointer-events: none;
     }
   }
 
@@ -73,15 +76,22 @@ export const HeroImgContainer = styled.div`
   top: 50%;
   right: 0;
   width: 750px;
-  height: 735px;
+  height: 700px;
   max-width: 800px;
   transform: translateY(-50%);
   max-height: 100vh;
+
+  @media (max-width: 900px) {
+    right: unset;
+    left: 0;
+    max-width: 100%;
+    top: 40%;
+  }
 `;
 
 export const ChatBalloon = styled.span`
   position: absolute;
-  top: 14%;
+  top: 8%;
   right: 2%;
   background-color: ${theme.colors.white};
   border-radius: 15px;
@@ -92,6 +102,7 @@ export const ChatBalloon = styled.span`
   animation: chatMovement 4s infinite ease-in-out;
   ${textMdRegular}
   z-index: 5;
+  opacity: 0;
 
   &::after {
     content: "";
@@ -104,16 +115,22 @@ export const ChatBalloon = styled.span`
     background-size: contain;
     transform: scaleX(-1);
   }
+
+  @media (max-width: 900px) {
+    display: none;    
+  }
 `;
 
 export const HeroImgBG = styled(Image)`
   object-fit: contain;
-  transform: translate(100px, 150px);
+  transform: translate(0, 150px);
   pointer-events: none;
+  max-height: 100%;
+  margin-left: 10%;
   opacity: 0;
 
-  @media (max-width: 670px) {
-    display: none;
+  @media (max-width: 900px) {
+    margin: 0;    
   }
 `;
 
@@ -144,6 +161,10 @@ export const HeroTexts = styled.div`
     > h1 {
       ${displayLgBold}
     }
+  }
+
+  @media (max-width: 900px) {
+    transform: translateY(50%);
   }
 
   @media (max-width: 470px) {
@@ -211,6 +232,11 @@ export const ScrollDrop = styled.div`
   position: absolute;
   bottom: -10px;
   opacity: 0;
+  z-index: 5;
+
+  @media (max-width: 900px) {
+    bottom: 10px;    
+  }
 
   &::after {
     content: "";
