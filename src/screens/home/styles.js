@@ -10,6 +10,7 @@ import {
   displayXsRegular,
   textLgBold,
   textLgRegular,
+  textMdBold,
   textMdRegular,
   textSmMedium,
   textSmRegular,
@@ -283,7 +284,7 @@ export const SkillsSectionWrapper = styled.div`
   display: flex;
 
   @media (max-width: 806px) {
-    padding: 50px 0 100px;
+    padding: 50px 0 70px;
   }
 
   & h2 {
@@ -340,8 +341,16 @@ export const SkillsCardsContainer = styled.div`
   top: 40px;
   opacity: 0;
 
-  @media (max-width: 806px) {
+  @media (max-width: 1024px) {
+    gap: 18px 20px;
+  }
+
+  @media (max-width: 820px) {
     grid-template-columns: repeat(2, 1fr);
+  }
+
+  @media (max-width: 600px) {
+    gap: 12px;    
   }
 `;
 
@@ -360,6 +369,12 @@ export const SkillCard = styled.div`
   transition: 0.4s cubic-bezier(0.47, 1.64, 0.41, 0.8);
   filter: blur(0.7px);
 
+  @media (max-width: 1024px) {
+    opacity: 1;
+    transform: scale(1.03);
+    filter: blur(0);    
+  }
+
   @media (max-width: 561px) {
     padding: 15px 10px;
     gap: 10px;
@@ -377,6 +392,10 @@ export const SkillTexts = styled.div`
     ${textSmRegular}
     color: ${theme.colors.gray[200]};
     line-height: 12px;
+
+    @media (max-width: 561px) {
+      ${textXsRegular}
+    }
   }
 
   & h4 {
@@ -384,9 +403,8 @@ export const SkillTexts = styled.div`
     color: ${theme.colors.gray[400]};
 
     @media (max-width: 561px) {
-      ${textLgBold}
-      line-height: 19px;
-      margin-bottom: 5px;
+      ${textMdBold}
+      letter-spacing: -0.2px;
     }
   }
 `;
@@ -396,7 +414,8 @@ export const SkillLogo = styled.figure`
   height: 100%;
 
   @media (max-width: 561px) {
-    width: 40px;
+    width: 35px;
+    max-height: 35px;
   }
 
   & svg,
@@ -457,7 +476,7 @@ export const ProjectsSection = styled.section`
   }
 
   @media (max-width: 500px) {
-    padding: 100px 20px 70px;
+    padding: 70px 20px;
   }
 
   &::after {

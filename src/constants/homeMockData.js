@@ -14,22 +14,22 @@ export const stacks = [
         <path d="M1123.73 1200.49c-109.54 1.14-200.09-90.46-200.03-200.33.06-104.21 84.32-199.86 200.66-200 110.45-.13 200.37 90.03 199.99 200.62-.41 116.14-96.22 201.45-200.62 199.71z" />
       </svg>
     ),
-    time: "2 years",
+    time: "3 years",
   },
   {
     title: "HTML5",
     icon: <Image fill src="/assets/icons/html5.svg" alt="HTML5 Logo" />,
-    time: "2 years",
+    time: "3 years",
   },
   {
     title: "CSS3",
     icon: <Image fill src="/assets/icons/css3.svg" alt="CSS3 Logo" />,
-    time: "2 years",
+    time: "3 years",
   },
   {
     title: "SCSS",
     icon: <Image fill src="/assets/icons/scss.svg" alt="SCSS Logo" />,
-    time: "1.5 years",
+    time: "2.6 years",
   },
   {
     title: "React Native",
@@ -49,7 +49,7 @@ export const stacks = [
   {
     title: "Javascript",
     icon: <Image fill src="/assets/icons/js.svg" alt="JS Logo" />,
-    time: "2 years",
+    time: "3 years",
   },
   {
     title: "Typescript",
@@ -57,19 +57,14 @@ export const stacks = [
     time: "2 years",
   },
   {
-    title: "Node.js",
-    icon: <Image fill src="/assets/icons/node.svg" alt="node Logo" />,
-    time: "0.6 year",
-  },
+    title: "Wordpress",
+    icon: <Image fill src="/assets/icons/wp.svg" alt="Wordpress Logo" />,
+    time: "2.6 years",
+  },  
   {
     title: "PHP",
     icon: <Image fill src="/assets/icons/php.svg" alt="PHP Logo" />,
-    time: "1.3 years",
-  },
-  {
-    title: "Wordpress",
-    icon: <Image fill src="/assets/icons/wp.svg" alt="Wordpress Logo" />,
-    time: "1 year",
+    time: "2.6 years",
   },
   {
     title: "Git",
@@ -80,5 +75,20 @@ export const stacks = [
     title: "Vtex.io",
     icon: <Image fill src="/assets/icons/vtex.svg" alt="Vtex Logo" />,
     time: "2 years",
+  },
+  {
+    title: "Node.js",
+    icon: <Image fill src="/assets/icons/node.svg" alt="node Logo" />,
+    time: "6 months",
+  },
+  {
+    title: "Jest.js",
+    icon: <Image fill src="/assets/icons/jest.svg" alt="Jest.js Logo" />,
+    time: "6 months",
+  },
+  {
+    title: "Shopify",
+    icon: <Image fill src="/assets/icons/shopify.svg" alt="Shopify Logo" />,
+    time: "6 months",
   },
 ];

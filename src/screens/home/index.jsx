@@ -57,7 +57,7 @@ import Preloading from "../../components/preloading";
 import ModalVideo from "../../components/modalVideo";
 
 // Constants
-import { stacks } from "../../constants/heroMockData";
+import { stacks } from "../../constants/homeMockData";
 
 // Utils
 import { goToSection } from "../../utils/actions";
