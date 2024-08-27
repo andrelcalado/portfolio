@@ -1,6 +1,10 @@
+import React from "react";
 import Image from "next/image";
 
-export const stacks = [
+// Types
+import { ProjectType, StackType } from "../types/dataTypes";
+
+export const stacks: Array<StackType> = [
   {
     title: "React.js",
     icon: (
@@ -92,3 +96,60 @@ export const stacks = [
     time: "6 months",
   },
 ];
+
+export const projects: Array<ProjectType> = [
+  {
+    title: "Exit - Redesign",
+    tag: "teamwork",
+    thumbnail: "/assets/images/projects/exit.png",
+    link: "https://exit.ag/"
+  },
+  {
+    title: "Loadout - Redesign",
+    thumbnail: "/assets/images/projects/loadout.png",
+    video: true,
+    tag: "alone"
+  },
+  {
+    title: "Nstech - Redesign",
+    thumbnail: "/assets/images/projects/nstech.png",
+    link: "https://nstech.com.br",
+    tag: "teamwork"
+  },
+  {
+    title: "Weld Vision - Creation",
+    thumbnail: "/assets/images/projects/weld-vision.png",
+    link: "https://www.weldvision.com/",
+    tag: "teamwork"
+  },
+  {
+    title: "Techfx - Creation",
+    thumbnail: "/assets/images/projects/techfx.png",
+    link: "https://techfx.com.br/",
+    tag: "teamwork"
+  },
+  {
+    title: "FOM - Redesign",
+    thumbnail: "/assets/images/projects/fom.png",
+    link: "https://www.fom.com.br/",
+    tag: "teamwork"
+  },
+  {
+    title: "Voll - Redesign",
+    thumbnail: "/assets/images/projects/voll.png",
+    link: "http://voll.peakstudio.com.br/",
+    tag: "teamwork"
+  },
+  {
+    title: "Som Maior - Redesign",
+    thumbnail: "/assets/images/projects/som-maior.png",
+    link: "https://www.sommaior.com.br/",
+    tag: "teamwork"
+  },
+  {
+    title: "TMG - Redesign",
+    thumbnail: "/assets/images/projects/tmg.png",
+    link: "https://www.tmg.agr.br/",
+    tag: "teamwork"
+  } 
+]
