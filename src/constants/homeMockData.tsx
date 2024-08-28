@@ -99,10 +99,22 @@ export const stacks: Array<StackType> = [
 
 export const projects: Array<ProjectType> = [
   {
-    title: "Exit - Redesign",
-    tag: "teamwork",
-    thumbnail: "/assets/images/projects/exit.png",
-    link: "https://exit.ag/"
+    title: "Artwalk - Redesign",
+    thumbnail: "/assets/images/projects/artwalk.jpg",
+    link: "https://www.artwalk.com.br/",
+    tag: "teamwork"
+  },
+  {
+    title: "Authentic Feet - Redesign",
+    thumbnail: "/assets/images/projects/aut.jpg",
+    link: "https://www.authenticfeet.com.br/",
+    tag: "teamwork"
+  },
+  {
+    title: "ROX - Redesign",
+    thumbnail: "/assets/images/projects/rox.jpg",
+    link: "https://roxpartner.com/",
+    tag: "teamwork"
   },
   {
     title: "Loadout - Redesign",
@@ -111,45 +123,57 @@ export const projects: Array<ProjectType> = [
     tag: "alone"
   },
   {
-    title: "Nstech - Redesign",
-    thumbnail: "/assets/images/projects/nstech.png",
-    link: "https://nstech.com.br",
-    tag: "teamwork"
-  },
-  {
     title: "Weld Vision - Creation",
-    thumbnail: "/assets/images/projects/weld-vision.png",
+    thumbnail: "/assets/images/projects/weld-vision.jpg",
     link: "https://www.weldvision.com/",
     tag: "teamwork"
   },
   {
     title: "Techfx - Creation",
-    thumbnail: "/assets/images/projects/techfx.png",
+    thumbnail: "/assets/images/projects/techfx.jpg",
     link: "https://techfx.com.br/",
     tag: "teamwork"
   },
   {
+    title: "Ciclo Academy - Creation",
+    thumbnail: "/assets/images/projects/ciclo-academy.jpg",
+    link: "https://cicloacademy.com.br/",
+    tag: "teamwork"
+  },
+  {
     title: "FOM - Redesign",
-    thumbnail: "/assets/images/projects/fom.png",
+    thumbnail: "/assets/images/projects/fom.jpg",
     link: "https://www.fom.com.br/",
     tag: "teamwork"
   },
   {
     title: "Voll - Redesign",
-    thumbnail: "/assets/images/projects/voll.png",
+    thumbnail: "/assets/images/projects/voll.jpg",
     link: "http://voll.peakstudio.com.br/",
     tag: "teamwork"
   },
   {
     title: "Som Maior - Redesign",
-    thumbnail: "/assets/images/projects/som-maior.png",
+    thumbnail: "/assets/images/projects/som-maior.jpg",
     link: "https://www.sommaior.com.br/",
     tag: "teamwork"
   },
   {
     title: "TMG - Redesign",
-    thumbnail: "/assets/images/projects/tmg.png",
+    thumbnail: "/assets/images/projects/tmg.jpg",
     link: "https://www.tmg.agr.br/",
     tag: "teamwork"
-  } 
+  }, 
+  {
+    title: "MBM - Redesign",
+    thumbnail: "/assets/images/projects/mbm.jpg",
+    link: "https://movimentobemmaior.org.br/",
+    tag: "teamwork"
+  }, 
+  {
+    title: "Simpósio Supply Chain - Redesign",
+    thumbnail: "/assets/images/projects/simposio.jpg",
+    link: "https://simposiosupplychain.com.br/",
+    tag: "teamwork"
+  }, 
 ]

@@ -272,8 +272,8 @@ export default function HomeScreen() {
 
           <h2 className="projectsTitle">Projects</h2>
           <p className="projectsDesc">
-            Some of the bests projects that i developed alone as front end
-            developer and projects that i developed with the top develop teams.
+            Some of the bests projects that I developed alone as Front End
+            Developer and projects that I developed with the supreme develop teams.
           </p>
 
           <ProjectsSlideContainer className="projectsSlide">
@@ -293,6 +293,9 @@ export default function HomeScreen() {
                   slidesPerView: 1,
                 },
                 830: {
+                  slidesPerView: 2,
+                },
+                1200: {
                   slidesPerView: 3,
                 },
               }}
