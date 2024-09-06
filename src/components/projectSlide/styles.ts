@@ -10,19 +10,13 @@ import { theme } from "../../theme/globalStyles";
 import { textMdBold } from "../../theme/typography";
 
 export const ProjectSlideStyled = styled.div`
-  /* min-width: 448px;
-  height: 255px; */
   position: relative;
   cursor: pointer;
   border-radius: 3px;
   overflow: hidden;
   border: 2px solid ${theme.colors.white};
   background-color: ${theme.colors.blue.darkLight};
-
-  /* @media (max-width: 830px) {
-    height: 215px;
-    min-width: unset;
-  } */
+  height: 100%;
 
   &:hover {
     border: 2px solid ${theme.colors.green.light};
@@ -44,6 +38,10 @@ export const ProjectSlideStyled = styled.div`
       opacity: 1;
       top: 0;
     }
+  }
+
+  @media (max-width: 1024px) {
+    border: 2px solid ${theme.colors.green.light};
   }
 `;
 
@@ -111,8 +109,15 @@ export const ProjectTag = styled.div`
   pointer-events: none;
   opacity: 0;
 
-   & img {
+  & img {
     position: relative !important;
     filter: invert(1);
+  }
+
+  @media (max-width: 1024px) {
+    top: unset;
+    bottom: 0;
+    border-radius: 0 10px 0 0;
+    opacity: 1;
   }
 `;
