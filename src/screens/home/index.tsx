@@ -1,5 +1,5 @@
 // Core
-import React, { useRef, useEffect, useState } from "react";
+import React, { useEffect, useState } from "react";
 
 // Theme
 import { Container, theme } from "../../theme/globalStyles";
@@ -8,7 +8,11 @@ import { Container, theme } from "../../theme/globalStyles";
 import Image from "next/image";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
+import { SwiperSlide } from "swiper/react";
+import { Autoplay, Navigation, Pagination } from "swiper/modules";
 import "react-vertical-timeline-component/style.min.css";
+import "swiper/css/navigation";
+import "swiper/css/pagination";
 import "swiper/css";
 
 // Styles
@@ -44,6 +48,7 @@ import {
   ContactFooterContainer,
   HeroImgContainer,
   ChatBalloon,
+  ProjectsSwiper,
 } from "./styles";
 
 // Components
@@ -51,27 +56,28 @@ import BackToTop from "../../components/backToTop";
 import { timelineProjects } from "../../components/timelineProjects";
 import ProjectPlaceholder from "../../components/projectPlaceholder";
 import ALButton from "../../components/button";
-import ProjectsSlide from "../../components/projectsSwiper";
+import ProjectSlide from "../../components/projectSlide";
 import ContactCard from "../../components/contactCard";
 import Preloading from "../../components/preloading";
 import ModalVideo from "../../components/modalVideo";
 
 // Constants
-import { stacks } from "../../constants/homeMockData";
+import { projects, stacks } from "../../constants/homeMockData";
 
 // Utils
 import { goToSection } from "../../utils/actions";
+
 gsap.registerPlugin(ScrollTrigger);
 
 export default function HomeScreen() {
-  let stacksMovimentRef = useRef();
-  const [videoModal, setVideoModal] = useState(false);
+  let stacksMovimentRef: HTMLDivElement | null;
+  const [videoModal, setVideoModal] = useState<boolean>(false);
 
   useEffect(() => {
     // Hero Stacks Animation
     gsap.to(stacksMovimentRef, {
       keyframes: [
-        // { y: 0, delay: 2, ease: "back.out(2)" },
+        { y: 0, delay: 2, ease: "back.out(2)" },
         { y: -70, delay: 2, ease: "back.out(2)" },
         { y: -130, delay: 2, ease: "back.out(2)" },
         { y: -190, delay: 2, ease: "back.out(2)" },
@@ -82,7 +88,7 @@ export default function HomeScreen() {
     });
 
     // Skills ScrollTrigger
-    const skillsTimeline = gsap.timeline({
+    const skillsTimeline: gsap.core.Timeline = gsap.timeline({
       scrollTrigger: {
         trigger: ".skillsTitle",
         start: "top 85%",
@@ -96,7 +102,7 @@ export default function HomeScreen() {
       .to(".skillsCards", { opacity: 1, y: -40 });
 
     // Projects ScrollTrigger
-    const projectsTimeline = gsap.timeline({
+    const projectsTimeline: gsap.core.Timeline = gsap.timeline({
       scrollTrigger: {
         trigger: ".projectsTitle",
         start: "top 75%",
@@ -111,7 +117,7 @@ export default function HomeScreen() {
       .to(".projectsSlide", { opacity: 1, y: -40 });
 
     // Timeline ScrollTrigger
-    const timelineTimeline = gsap.timeline({
+    const timelineTimeline: gsap.core.Timeline = gsap.timeline({
       scrollTrigger: {
         trigger: ".timelineTitle",
         start: "top 85%",
@@ -122,7 +128,7 @@ export default function HomeScreen() {
 
     timelineTimeline.to(".timelineTitle", { opacity: 1, y: -40 });
 
-    const borderTimeline = gsap.timeline({
+    const borderTimeline: gsap.core.Timeline = gsap.timeline({
       scrollTrigger: {
         trigger: ".ALCodeBorderSymbol",
         start: "top 75%",
@@ -133,7 +139,7 @@ export default function HomeScreen() {
     borderTimeline.to(".ALCodeBorderSymbol", { strokeDashoffset: 0, y: 40 });
 
     // Contact ScrollTrigger
-    const contactTimeline = gsap.timeline({
+    const contactTimeline: gsap.core.Timeline = gsap.timeline({
       scrollTrigger: {
         trigger: ".contactTitle",
         start: "top 80%",
@@ -202,7 +208,11 @@ export default function HomeScreen() {
               <ChatBalloon className="chatBalloon">
                 Motorcycle lifestyle ✊❤️
               </ChatBalloon>
-              <HeroImgBG className="heroImgBG" fill src="/assets/images/hero.png" />
+              <HeroImgBG
+                className="heroImgBG"
+                fill
+                src="/assets/images/hero.png"
+              />
             </HeroImgContainer>
           </Container>
         </HeroSection>
@@ -227,20 +237,17 @@ export default function HomeScreen() {
               <h2 className="skillsTitle">Skills</h2>
 
               <SkillsCardsContainer className="skillsCards">
-                {stacks && stacks.map((stack, index) => (
-                  <SkillCard
-                    key={index}
-                  >
-                    <SkillLogo>
-                      {stack.icon}
-                    </SkillLogo>
+                {stacks &&
+                  stacks.map((stack, index) => (
+                    <SkillCard key={index}>
+                      <SkillLogo>{stack.icon}</SkillLogo>
 
-                    <SkillTexts>
-                      <h4>{stack.title}</h4>
-                      <p>{stack.time}</p>
-                    </SkillTexts>
-                  </SkillCard>
-                ))}
+                      <SkillTexts>
+                        <h4>{stack.title}</h4>
+                        <p>{stack.time}</p>
+                      </SkillTexts>
+                    </SkillCard>
+                  ))}
               </SkillsCardsContainer>
 
               <SkillsFooterContainer>
@@ -265,15 +272,54 @@ export default function HomeScreen() {
 
           <h2 className="projectsTitle">Projects</h2>
           <p className="projectsDesc">
-            Some of the bests projects that i developed alone as front end
-            developer and projects that i developed with the top develop teams.
+            Some of the bests projects that I developed alone as Front End
+            Developer and projects that I developed with the supreme develop teams.
           </p>
 
           <ProjectsSlideContainer className="projectsSlide">
-            <ProjectsSlide
-              videoModal={videoModal}
-              setVideoModal={setVideoModal}
-            />
+            <ProjectsSwiper
+              slidesPerView={3}
+              spaceBetween={20}
+              modules={[Navigation, Pagination, Autoplay]}
+              navigation
+              autoplay={{ delay: 5000 }}
+              breakpoints={{
+                0: {
+                  slidesPerView: 1,
+                  width: 335,
+                },
+                414: {
+                  width: 375,
+                  slidesPerView: 1,
+                },
+                830: {
+                  slidesPerView: 2,
+                },
+                1200: {
+                  slidesPerView: 3,
+                },
+              }}
+              loop
+            >
+              {projects?.map((eachProject, index) => (
+                <SwiperSlide key={index}>
+                  <ProjectSlide
+                    tag={eachProject.tag}
+                    title={eachProject.title}
+                    thumbnail={eachProject.thumbnail}
+                    link={eachProject.link}
+                    video={eachProject.video}
+                    videoHandle={
+                      eachProject.video ?
+                      ((e) => {
+                        e.preventDefault();
+                        setVideoModal(!videoModal);
+                      }) : undefined
+                    }
+                  />
+                </SwiperSlide>
+              ))}
+            </ProjectsSwiper>
           </ProjectsSlideContainer>
 
           <ProjectsPlaceholderContainer>

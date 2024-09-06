@@ -1,24 +1,22 @@
+// Core
 import Image from "next/image";
 import Link from "next/link";
-import { SwiperSlide } from "swiper/react";
-import { theme } from "../../theme/globalStyles";
-import { textMdBold } from "../../theme/typography";
 import styled from "styled-components";
 
-export const ProjectSlide = styled(SwiperSlide)`
-  min-width: 448px;
-  height: 255px;
+// Global
+import { theme } from "../../theme/globalStyles";
+
+// Typography
+import { textMdBold } from "../../theme/typography";
+
+export const ProjectSlideStyled = styled.div`
   position: relative;
   cursor: pointer;
   border-radius: 3px;
+  overflow: hidden;
   border: 2px solid ${theme.colors.white};
   background-color: ${theme.colors.blue.darkLight};
-  overflow: hidden;
-
-  @media (max-width: 830px) {
-    height: 215px;
-    min-width: unset;
-  }
+  height: 100%;
 
   &:hover {
     border: 2px solid ${theme.colors.green.light};
@@ -42,7 +40,9 @@ export const ProjectSlide = styled(SwiperSlide)`
     }
   }
 
-
+  @media (max-width: 1024px) {
+    border: 2px solid ${theme.colors.green.light};
+  }
 `;
 
 export const ProjectFigure = styled(Image)`
@@ -109,8 +109,15 @@ export const ProjectTag = styled.div`
   pointer-events: none;
   opacity: 0;
 
-   & img {
+  & img {
     position: relative !important;
     filter: invert(1);
+  }
+
+  @media (max-width: 1024px) {
+    top: unset;
+    bottom: 0;
+    border-radius: 0 10px 0 0;
+    opacity: 1;
   }
 `;
