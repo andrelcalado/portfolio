@@ -13,3 +13,12 @@ export interface ProjectType {
   videoHandle?: (e: any) => void;
   title: string;
 }
+
+export interface TimelineProjectType {
+  title: string,
+  business: string,
+  logo: string,
+  period: string,
+  periodSimplified: string,
+  desc: string,
+}

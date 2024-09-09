@@ -16,6 +16,7 @@ import {
   textLgBold,
   textLgRegular,
   textMdBold,
+  textMdMedium,
   textMdRegular,
   textSmMedium,
   textSmRegular,
@@ -956,8 +957,8 @@ export const TimelineItem = styled(VerticalTimelineElement)`
 
   & .vertical-timeline-element-date {
     top: 14px !important;
-    ${textSmMedium}
-    color: ${theme.colors.gray[200]};
+    padding: 0;
+    opacity: 1;
   }
 `;
 
@@ -1092,4 +1093,24 @@ export const ContactFooterContainer = styled(SkillsFooterContainer)`
     background-color: ${theme.colors.white};
     height: 2px;
   }
+`;
+
+export const TimelinePeriodContent = styled.div`
+  display: block;
+`;
+
+export const TimelinePeriodDate = styled.time`
+  ${textMdMedium}
+  display: block;
+  color: ${theme.colors.gray[300]};
+`;
+
+export const TimelinePeriodDateSimp = styled.time`
+  ${textSmRegular}
+  color: ${theme.colors.gray[400]};
+  background-color: ${theme.colors.green.light};
+  border-radius: 6px;
+  padding: 5px 8px;
+  margin-top: 4px;
+  display: inline-block;
 `;

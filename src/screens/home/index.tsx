@@ -49,11 +49,14 @@ import {
   HeroImgContainer,
   ChatBalloon,
   ProjectsSwiper,
-} from "./styles";
+  TimelinePeriodContent,
+  TimelinePeriodDate,
+  TimelinePeriodDateSimp,
+} from "./styles.ts";
 
 // Components
 import BackToTop from "../../components/backToTop";
-import { timelineProjects } from "../../components/timelineProjects";
+import { timelineProjects } from "../../constants/homeMockData";
 import ProjectPlaceholder from "../../components/projectPlaceholder";
 import ALButton from "../../components/button";
 import ProjectSlide from "../../components/projectSlide";
@@ -273,7 +276,8 @@ export default function HomeScreen() {
           <h2 className="projectsTitle">Projects</h2>
           <p className="projectsDesc">
             Some of the bests projects that I developed alone as Front End
-            Developer and projects that I developed with the supreme develop teams.
+            Developer and projects that I developed with the supreme develop
+            teams.
           </p>
 
           <ProjectsSlideContainer className="projectsSlide">
@@ -310,11 +314,12 @@ export default function HomeScreen() {
                     link={eachProject.link}
                     video={eachProject.video}
                     videoHandle={
-                      eachProject.video ?
-                      ((e) => {
-                        e.preventDefault();
-                        setVideoModal(!videoModal);
-                      }) : undefined
+                      eachProject.video
+                        ? (e) => {
+                            e.preventDefault();
+                            setVideoModal(!videoModal);
+                          }
+                        : undefined
                     }
                   />
                 </SwiperSlide>
@@ -356,7 +361,14 @@ export default function HomeScreen() {
             {timelineProjects.map((item, i) => (
               <TimelineItem
                 key={i}
-                date={item.period}
+                date={
+                  <TimelinePeriodContent>
+                    <TimelinePeriodDate>{item.period}</TimelinePeriodDate>
+                    <TimelinePeriodDateSimp>
+                      {item.periodSimplified}
+                    </TimelinePeriodDateSimp>
+                  </TimelinePeriodContent>
+                }
                 icon={
                   <Image
                     fill
