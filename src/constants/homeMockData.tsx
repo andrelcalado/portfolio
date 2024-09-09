@@ -2,7 +2,7 @@ import React from "react";
 import Image from "next/image";
 
 // Types
-import { ProjectType, StackType } from "../types/dataTypes";
+import { ProjectType, StackType, TimelineProjectType } from "../types/dataTypes";
 
 export const stacks: Array<StackType> = [
   {
@@ -177,3 +177,62 @@ export const projects: Array<ProjectType> = [
     tag: "teamwork"
   }, 
 ]
+
+export const timelineProjects: Array<TimelineProjectType> = [
+  {
+    title: "Digital Design - Incomplete",
+    business: "Universidade Federal do Ceará",
+    logo: "ufc",
+    period: "Mar 2017 - Dec 2020",
+    periodSimplified: "3 years",
+    desc: "The degree include several areas about Design like Industrial Design and Graphic Design, but your mainly focus is in the UX Design and Software Development.",
+  },
+  {
+    title: "Vídeo Maker, Designer & Motion Designer",
+    business: "Objetivo Concursos",
+    logo: "objetivo",
+    period: "Jul 2019 - Oct 2021",
+    periodSimplified: "2.3 years",
+    desc: "Idealization, recording and, mainly, edition of calls and viral videos. In addition a digital pieces conception",
+  },
+  {
+    title: "Estage - Front-end Developer",
+    business: "STB Desenvolvimento Tecnológico",
+    logo: "stb",
+    period: "Sep 2021 - Apr 2022",
+    periodSimplified: "7 months",
+    desc: "Creating new components, solving bugs and upgrading the Front-end in a Traffic Accidents Dashboard called VIDA using the technologies React.js and React Native.",
+  },
+  {
+    title: "Contract - Front-end Developer",
+    business: "Dtax Brasil",
+    logo: "wcf",
+    period: "Jan 2022 - Apr 2022",
+    periodSimplified: "3 months",
+    desc: "Creating new components and pages on a new system to do tax revenue declaration using React.js technology",
+  },
+  {
+    title: "Contract - Full-Stack Developer",
+    business: "Exit",
+    logo: "exit",
+    period: "Apr 2022 - Oct 2022",
+    periodSimplified: "6 months",
+    desc: "Creation and maintenance of web platforms using the technologies React.js, HTML, CSS, Javascript, PHP and Wordpress.",
+  },
+  {
+    title: "Freelancer - Front-end Developer",
+    business: "Upwork",
+    logo: "upwork",
+    period: "May 2022 - Jul 2022",
+    periodSimplified: "2 months",
+    desc: "Dashboard mobile app redesign with React Native.",
+  },  
+  {
+    title: "Full Time - Full-Stack Developer",
+    business: "Peak Studio ",
+    logo: "peak",
+    period: "Oct 2022 - Current",
+    periodSimplified: "2 years",
+    desc: "Creation and maintenance of web and mobile platforms using the technologies Vtex.io, React.js, React Native, HTML, SCSS, CSS, Typescript, Javascript, PHP and Wordpress",
+  },
+];
