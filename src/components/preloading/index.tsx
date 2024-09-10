@@ -11,7 +11,7 @@ import { theme } from "../../theme/globalStyles";
 gsap.registerPlugin(SlowMo);
 
 export default function Preloading() {
-  let ALCodeBorderRef = useRef();
+  let ALCodeBorderRef: SVGPathElement | null;
 
   useEffect(() => {
     const alTimeline = gsap.timeline();
@@ -145,7 +145,7 @@ export default function Preloading() {
 
   return (
     <PreloadingScreen className="preloadingScreen">
-      <LogoAnimationContainer className="logoAnimationContainer">
+      <LogoAnimationContainer style={{ display: 'none' }} className="logoAnimationContainer"> 
         <ALLogoFigure>
           <svg
             xmlns="http://www.w3.org/2000/svg"

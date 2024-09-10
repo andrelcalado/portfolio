@@ -2,45 +2,12 @@ import styled from "styled-components";
 import { theme } from "../../theme/globalStyles";
 
 export const PreloadingScreen = styled.div`
-  height: 100svh;
-  width: 100svw;
-  overflow: hidden;
   display: flex;
-  justify-content: center;
-  align-items: center;
-  background-color: ${theme.colors.blue.darkLight};
-  position: fixed;
-  z-index: 9999999;
-
-  &::after,
-  &::before {
-    content: "";
-    width: 500px;
-    height: 500px;
-    background: radial-gradient(
-      circle,
-      ${theme.colors.blue.darkLight} 0%,
-      rgba(60, 255, 209, 0.5) 54%
-    );
-    position: absolute;
-    filter: blur(200px);
-    transition: 1s cubic-bezier(0.69, -0.01, 0.24, 1);
-    animation: ballBlurOpacity 3s infinite ease-in-out alternate-reverse;
-  }
-
-  &::after {
-    bottom: -250px;
-    left: -250px;
-  }
-
-  &::before {
-    top: -250px;
-    right: -250px;
-  }
 `;
 
 export const LogoAnimationContainer = styled.div`
   position: relative;
+  display: block !important;
   top: 20px;
 
   & svg {
