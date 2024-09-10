@@ -1,5 +1,8 @@
+// Core
 import Image from "next/image";
 import React from "react";
+
+// Styles
 import {
   BorderBG,
   CardTextsContainer,
@@ -7,7 +10,10 @@ import {
   ContactCardField,
 } from "./styles";
 
-export default function ContactCard({ className, logo, type, label, href }) {
+// Types
+import { ContactCardTypes } from "../../types/elementsTypes";
+
+export default function ContactCard({ className, logo, type, label, href }: ContactCardTypes) {
   return (
     <ContactCardField className={className} href={href} target="_blank">
       <BorderBG className="borderBG" />

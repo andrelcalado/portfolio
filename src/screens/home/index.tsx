@@ -215,6 +215,7 @@ export default function HomeScreen() {
                 className="heroImgBG"
                 fill
                 src="/assets/images/hero.png"
+                alt="Background photography"
               />
             </HeroImgContainer>
           </Container>
@@ -361,6 +362,7 @@ export default function HomeScreen() {
             {timelineProjects.map((item, i) => (
               <TimelineItem
                 key={i}
+                // @ts-ignore
                 date={
                   <TimelinePeriodContent>
                     <TimelinePeriodDate>{item.period}</TimelinePeriodDate>
@@ -388,7 +390,7 @@ export default function HomeScreen() {
         </TimeLineSection>
 
         <ContactSection id="contact" data-js="section">
-          <BGVideo autoPlay="autoplay" loop>
+          <BGVideo autoPlay loop>
             <source
               src={require("../../assets/videos/codding.mp4")}
               type="video/mp4"

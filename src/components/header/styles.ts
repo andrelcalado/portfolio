@@ -2,7 +2,7 @@ import { theme } from "../../theme/globalStyles";
 import styled, { css } from "styled-components";
 import { textMdRegular } from "../../theme/typography";
 
-export const HeaderContainer = styled.header`
+export const HeaderContainer = styled.header<{ scrolled: boolean }>`
   position: fixed;
   width: 100%;
   top: 0;
@@ -32,8 +32,8 @@ export const HeaderContainer = styled.header`
     `}
 `;
 
-export const LogoContainer = styled.figure`
-  ${({ active, scrolled }) => css`
+export const LogoContainer = styled.figure<{ scrolled: boolean }>`
+  ${({ scrolled }) => css`
     opacity: 0;
     top: -40px;
     position: relative;
@@ -53,7 +53,7 @@ export const LogoContainer = styled.figure`
   `}
 `;
 
-export const HeaderWrapper = styled.div`
+export const HeaderWrapper = styled.div<{ scrolled: boolean }>`
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -66,7 +66,7 @@ export const HeaderWrapper = styled.div`
   }
 `;
 
-export const NavContainer = styled.nav`
+export const NavContainer = styled.nav<{ active: boolean; scrolled: boolean }>`
   ${({ active, scrolled }) => css`
     margin-top: ${scrolled ? "0" : "-50px"};
     transition: 0.5s ease-out;
@@ -102,7 +102,7 @@ export const NavContainer = styled.nav`
   `}
 `;
 
-export const NavLinkItem = styled.li`
+export const NavLinkItem = styled.li<{ active: boolean }>`
   ${({ active }) => css`
     opacity: 0;
     top: -40px;
@@ -145,8 +145,8 @@ export const NavLinkItem = styled.li`
   `}
 `;
 
-export const HambButton = styled.button`
-  ${({ active }) => css`
+export const HambButton = styled.button<{ active: boolean }>`
+  ${({ active }) => `
     width: 22px;
     display: none;
     height: ${active ? 0 : "2px"};

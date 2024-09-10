@@ -2,7 +2,7 @@ import styled from "styled-components";
 import { theme } from "../../theme/globalStyles";
 import css from "styled-jsx/css";
 
-export const BackToTopStyled = styled.button`
+export const BackToTopStyled = styled.button<{ scrolled: boolean }>`
   position: fixed;
   bottom: 10%;
   right: 20px;
@@ -17,7 +17,7 @@ export const BackToTopStyled = styled.button`
   box-shadow: 0px 0px 30px rgba(0, 0, 0, 0.4);
   cursor: pointer;
   z-index: 500;
-  ${({ scrolled }) => css`
+  ${({ scrolled }) => `
     pointer-events: ${scrolled ? "all" : "none"};
     opacity: ${scrolled ? 1 : 0};
     transform: translate(0, ${scrolled ? 0 : "20px"});

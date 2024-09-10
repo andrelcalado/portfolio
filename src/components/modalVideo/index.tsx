@@ -1,7 +1,13 @@
+// Core
 import React from "react";
+
+// Styles
 import { CloseButton, ModalVideoContainer, ModalVideoScreen, Video } from "./styles";
 
-export default function ModalVideo({ active, setActive, video }) {
+// Types
+import { ModalVideoTypes } from "../../types/elementsTypes";
+
+export default function ModalVideo({ active, setActive, video }: ModalVideoTypes) {
   return (
     <ModalVideoScreen active={active}>
       <ModalVideoContainer>
