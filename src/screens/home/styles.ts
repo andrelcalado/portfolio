@@ -37,6 +37,7 @@ export const Main = styled.main`
   position: relative;
   height: 100%;
   z-index: 1;
+  display: block !important;
 `;
 
 export const HeroSection = styled.section`

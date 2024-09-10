@@ -163,7 +163,7 @@ export default function HomeScreen() {
     <>
       <Preloading />
 
-      <Main>
+      <Main style={{ display: 'none' }}>
         <BackToTop />
 
         <HeroSection>

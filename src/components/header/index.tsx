@@ -45,7 +45,7 @@ export default function Header() {
   }, []);
 
   return (
-    <HeaderContainer scrolled={scrolled}>
+    <HeaderContainer style={{ display: 'none' }} scrolled={scrolled}>
       <Container>
         <HeaderWrapper scrolled={scrolled}>
           <LogoContainer

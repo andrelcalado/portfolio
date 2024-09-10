@@ -9,6 +9,7 @@ export const HeaderContainer = styled.header`
   z-index: 99999;
   background: transparent;
   transition: 0.4s ease-out;
+  display: block !important;
 
   ${({ scrolled }) =>
     css`
