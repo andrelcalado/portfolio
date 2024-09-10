@@ -1,9 +1,15 @@
+// Core
 import React from "react";
+
+// Styles
 import { ButtonComponent } from "./styles";
 
-export default function ALButton({ children, href, onClick }) {
+// Types
+import { ALButtonTypes } from "../../types/elementsTypes";
+
+export default function ALButton({ children, href, onClick }: ALButtonTypes) {
   return (
-    <ButtonComponent href={href} onClick={onClick}>
+    <ButtonComponent href={href || '#'} onClick={onClick}>
       {children}
     </ButtonComponent>
   );

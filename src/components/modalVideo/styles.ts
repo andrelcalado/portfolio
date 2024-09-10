@@ -1,7 +1,7 @@
 import styled, { css } from "styled-components";
 import { theme } from "../../theme/globalStyles";
 
-export const ModalVideoScreen = styled.div`
+export const ModalVideoScreen = styled.div<{ active: boolean }>`
   ${({ active }) => css`
     position: fixed;
     top: 0;

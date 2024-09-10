@@ -1,6 +1,9 @@
-import { Container } from "../../theme/globalStyles";
+// Core
 import Link from "next/link";
-import React, { useEffect, useRef, useState } from "react";
+import React, { useEffect, useState } from "react";
+
+// Styles
+import { Container } from "../../theme/globalStyles";
 import {
   HeaderContainer,
   HeaderWrapper,
@@ -9,23 +12,27 @@ import {
   NavLinkItem,
   HambButton,
 } from "./styles";
+
+// Utils
 import { goToSection, toggleHtmlScroll } from "../../utils/actions";
 
 export default function Header() {
   const [scrolled, setScrolled] = useState(false);
   const [menuMobile, setMenuMobile] = useState(false);
-  const [activeSection, setActiveSection] = useState();
-  const sections = useRef([]);
+  const [activeSection, setActiveSection] = useState<null | string>();
+  const [sections, setSections] = useState<NodeListOf<any> | Array<null>>([]);
 
   const handleScroll = () => {
     const pageYOffset = window.pageYOffset;
     let newActiveSection = null;
 
-    sections.current.forEach((section) => {
-      const sectionOffsetTop = section.offsetTop;
-
-      if (pageYOffset >= sectionOffsetTop / 1.1) {
-        newActiveSection = section.id;
+    sections.forEach((section: HTMLElement | null) => {
+      if (section) {
+        const sectionOffsetTop = section.offsetTop;
+  
+        if (pageYOffset >= sectionOffsetTop / 1.1) {
+          newActiveSection = section.id;
+        }
       }
     });
 
@@ -33,7 +40,7 @@ export default function Header() {
   };
 
   useEffect(() => {
-    sections.current = document.querySelectorAll("[data-js=section]");
+    setSections(document.querySelectorAll("[data-js=section]"));
     window.addEventListener("scroll", () => {
       setScrolled(window.scrollY > 0);
       handleScroll();
@@ -50,7 +57,6 @@ export default function Header() {
         <HeaderWrapper scrolled={scrolled}>
           <LogoContainer
             className="logoFigure"
-            active={menuMobile}
             scrolled={scrolled}
           >
             <svg
@@ -167,6 +173,7 @@ export default function Header() {
                 </Link>
               </NavLinkItem>
               <NavLinkItem
+                active={false}
                 className="navItem5"
                 onClick={() => setMenuMobile(false)}
               >

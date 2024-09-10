@@ -24,7 +24,6 @@ export default function Preloading() {
       .to(ALCodeBorderRef, {
         strokeDashoffset: 0,
         duration: 3,
-        ease: SlowMo(1, 1, false),
         delay: 0.5,
       })
       .to(ALCodeBorderRef, {
