@@ -18,22 +18,22 @@ export const stacks: Array<StackType> = [
         <path d="M1123.73 1200.49c-109.54 1.14-200.09-90.46-200.03-200.33.06-104.21 84.32-199.86 200.66-200 110.45-.13 200.37 90.03 199.99 200.62-.41 116.14-96.22 201.45-200.62 199.71z" />
       </svg>
     ),
-    time: "3 years",
+    time: "3.5 years",
   },
   {
     title: "HTML5",
     icon: <Image fill src="/assets/icons/html5.svg" alt="HTML5 Logo" />,
-    time: "3 years",
+    time: "3.5 years",
   },
   {
     title: "CSS3",
     icon: <Image fill src="/assets/icons/css3.svg" alt="CSS3 Logo" />,
-    time: "3 years",
+    time: "3.5 years",
   },
   {
     title: "SCSS",
     icon: <Image fill src="/assets/icons/scss.svg" alt="SCSS Logo" />,
-    time: "2.6 years",
+    time: "3 years",
   },
   {
     title: "React Native",
@@ -53,27 +53,27 @@ export const stacks: Array<StackType> = [
   {
     title: "Javascript",
     icon: <Image fill src="/assets/icons/js.svg" alt="JS Logo" />,
-    time: "3 years",
+    time: "3.5 years",
   },
   {
     title: "Typescript",
     icon: <Image fill src="/assets/icons/ts.svg" alt="TS Logo" />,
-    time: "2 years",
+    time: "3 years",
   },
   {
     title: "Wordpress",
     icon: <Image fill src="/assets/icons/wp.svg" alt="Wordpress Logo" />,
-    time: "2.6 years",
+    time: "3 years",
   },  
   {
     title: "PHP",
     icon: <Image fill src="/assets/icons/php.svg" alt="PHP Logo" />,
-    time: "2.6 years",
+    time: "3 years",
   },
   {
     title: "Git",
     icon: <Image fill src="/assets/icons/git.svg" alt="Git Logo" />,
-    time: "3 years",
+    time: "3.5 years",
   },
   {
     title: "Vtex.io",
@@ -231,8 +231,8 @@ export const timelineProjects: Array<TimelineProjectType> = [
     title: "Full Time - Full-Stack Developer",
     business: "Peak Studio ",
     logo: "peak",
-    period: "Oct 2022 - Current",
-    periodSimplified: "2 years",
+    period: "Oct 2022 - Mar 2025",
+    periodSimplified: "2.5 years",
     desc: "Creation and maintenance of web and mobile platforms using the technologies Vtex.io, React.js, React Native, HTML, SCSS, CSS, Typescript, Javascript, PHP and Wordpress",
   },
 ];
