@@ -111,6 +111,12 @@ export const projects: Array<ProjectType> = [
     tag: "teamwork"
   },
   {
+    title: "Nossas Lembranças - SaaS",
+    thumbnail: "/assets/images/projects/nossas-lembrancas.jpg",
+    video: true,
+    tag: "alone"
+  },
+  {
     title: "ROX - Redesign",
     thumbnail: "/assets/images/projects/rox.jpg",
     link: "https://roxpartner.com/",
